@@ -1,0 +1,12 @@
+C:\Users\Zak\SCO\SCO.Domain\bin\Debug\net6.0\SCO.Domain.deps.json
+C:\Users\Zak\SCO\SCO.Domain\bin\Debug\net6.0\SCO.Domain.dll
+C:\Users\Zak\SCO\SCO.Domain\bin\Debug\net6.0\SCO.Domain.pdb
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.csproj.AssemblyReference.cache
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.AssemblyInfoInputs.cache
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.AssemblyInfo.cs
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.dll
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\refint\SCO.Domain.dll
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\SCO.Domain.pdb
+C:\Users\Zak\SCO\SCO.Domain\obj\Debug\net6.0\ref\SCO.Domain.dll

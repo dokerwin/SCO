@@ -1,0 +1,12 @@
+C:\Users\Zak\SCO\SCO.Contracts\bin\Debug\net6.0\SCO.Contracts.deps.json
+C:\Users\Zak\SCO\SCO.Contracts\bin\Debug\net6.0\SCO.Contracts.dll
+C:\Users\Zak\SCO\SCO.Contracts\bin\Debug\net6.0\SCO.Contracts.pdb
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.csproj.AssemblyReference.cache
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.AssemblyInfoInputs.cache
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.AssemblyInfo.cs
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.dll
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\refint\SCO.Contracts.dll
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\SCO.Contracts.pdb
+C:\Users\Zak\SCO\SCO.Contracts\obj\Debug\net6.0\ref\SCO.Contracts.dll

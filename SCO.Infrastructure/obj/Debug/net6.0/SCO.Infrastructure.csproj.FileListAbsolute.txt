@@ -1,0 +1,17 @@
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Infrastructure.deps.json
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Infrastructure.dll
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Infrastructure.pdb
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.AssemblyInfo.cs
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.dll
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\refint\SCO.Infrastructure.dll
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.pdb
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\ref\SCO.Infrastructure.dll
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Application.dll
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Domain.dll
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Application.pdb
+C:\Users\Zak\SCO\SCO.Infrastructure\bin\Debug\net6.0\SCO.Domain.pdb
+C:\Users\Zak\SCO\SCO.Infrastructure\obj\Debug\net6.0\SCO.Infrastructure.csproj.CopyComplete
