@@ -1,12 +1,12 @@
-namespace SCO.Application.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
+
+namespace SCO.Application.Services;
 public class AccountService : IAccountService
     {
         private readonly RestaurantDbContextcs _restaurantDb;
