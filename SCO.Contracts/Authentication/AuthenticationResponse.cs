@@ -1,8 +1,9 @@
 namespace SCO.Contracts.Authentication;
 
-public record RegisterRequest(
+public record AuthenticationResponce(
+    Guid Id,
     string FirstName,
     string LastName,
     string Email,
-    string Password
+    string Token
 );
