@@ -1,0 +1,26 @@
+@startuml
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include ./../C4_Component.puml
+!else
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!endif
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for SCO System - API Application
+
+Container(spa, "Single Page Application", "javascript and angular", "Provides all the retail functionality to customers via the singelpage application on SCO screen.")
+ContainerDb(db, "Database", "MS SQL SERVER", "Stores products, cashier information, hashed authentication credentials, access logs, etc.")
+System_Ext(mbs, "External loyalty system", "Stores information about customers loyalty points")
+System_Ext(nbs, "External NIP system", "Stores all of the NIP information about customers")
+System_Ext(nbs, "External Promotion system", "Stores promotion information about products")
+Container_Boundary(api, "API Application"){
+    Component(sign, "SCO API Server", "Applictaion", "Allows customers to buy products in the market")
+    Rel(sign, db, "Read & write to", "JDBC")
+    Rel(sign, mbs, "Read & write to", "JSON")
+    Rel(sign, nbs, "Read", "JSON")
+}
+
+Rel(spa, sign, "Uses", "JSON/HTTPS")
+@enduml
