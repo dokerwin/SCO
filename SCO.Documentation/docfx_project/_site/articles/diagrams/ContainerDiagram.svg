@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1395px" preserveAspectRatio="none" style="width:1754px;height:1395px;background:#FFFFFF;" version="1.1" viewBox="0 0 1754 1395" width="1754px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="255" x="742.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="245" x="747.5" y="24.5332">Cointainer diagram for SCO System</text><!--MD5=[8ae77ada6169822435c3d3bcb01b6727]
+cluster system--><g id="cluster_system"><rect fill="none" height="909" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="1009" x="7" y="282.6094"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="35" x="494" y="301.2188">SCO</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="51" x="486" y="317.1914">[System]</text></g><!--MD5=[8db0392074ab2901ce812f3350bb99c8]
+cluster idenBoundary--><g id="cluster_idenBoundary"><rect fill="none" height="400" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="252" x="31" y="767.6094"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="56" x="129" y="786.2188">Identity</text></g><!--MD5=[7442f3b126ee602ae02566c1a49e158a]
+cluster api--><g id="cluster_api"><rect fill="none" height="392" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="685" x="307" y="757.6094"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="96" x="601.5" y="776.2188">SCO Service</text></g><!--MD5=[2f5ad086dff00cf0bdb6986f4a8cc1b7]
+cluster exter--><g id="cluster_exter"><rect fill="none" height="168" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="708" x="1040" y="765.1094"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="131" x="1328.5" y="783.7188">External systems</text></g><!--MD5=[7b30460008fc71f9986330c33ee2d290]
+entity gateway--><g id="elem_gateway"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="215" x="759.5" y="571.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="96" x="819" y="598.2188">API Gateway</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136" x="799" y="614.1914">[.Net with ASP.NET Core]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="865" y="631.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="793.5" y="648.9707">Routers all requests to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="769.5" y="666.5801">appropriate services endpoints</text></g><!--MD5=[33573e971ff506c0f246109ca3fd77bd]
+entity spa--><g id="elem_spa"><rect fill="#438DD5" height="143.2656" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="209" x="762.5" y="336.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="181" x="776.5" y="363.2188">Single Page Application</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="803.5" y="379.1914">[javascript and angular]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="865" y="396.3613"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="799" y="413.9707">Provides all the retail</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="774" y="431.5801">functionality to customers via</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="772.5" y="449.1895">the singelpage application on</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="826.5" y="466.7988">SCO screen.</text></g><!--MD5=[ad2dcb81af5c092767ecface23203d8e]
+entity iden--><g id="elem_iden"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="220" x="47" y="806.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="115" x="99.5" y="833.2188">Identity service</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136" x="89" y="849.1914">[.Net with ASP.NET Core]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="155" y="866.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="57" y="883.9707">Manages workers accounts and</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="83.5" y="901.5801">provide authentitication</text></g><!--MD5=[f7b108d8ec0a95b81605dd67a995b3e8]
+entity idenDb--><g id="elem_idenDb"><path d="M56,1026.6094 C56,1016.6094 157,1016.6094 157,1016.6094 C157,1016.6094 258,1016.6094 258,1026.6094 L258,1141.2656 C258,1151.2656 157,1151.2656 157,1151.2656 C157,1151.2656 56,1151.2656 56,1141.2656 L56,1026.6094 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;"/><path d="M56,1026.6094 C56,1036.6094 157,1036.6094 157,1036.6094 C157,1036.6094 258,1036.6094 258,1026.6094 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="72" x="121" y="1057.2188">Database</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="103" x="105.5" y="1073.1914">[MS SQL SERVER]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="155" y="1090.3613"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="70.5" y="1107.9707">Stores cashier information,</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="85" y="1125.5801">hashed authentication</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="66" y="1143.1895">credentials, access logs, etc.</text></g><!--MD5=[30860e21ba0e39165c540f9e23fe2d63]
+entity sign--><g id="elem_sign"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="175" x="323.5" y="806.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="119" x="351.5" y="833.2188">SCO API Server</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136" x="343" y="849.1914">[.Net with ASP.NET Core]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="409" y="866.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="333.5" y="883.9707">Allows customers to buy</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="340.5" y="901.5801">products in the market</text></g><!--MD5=[7468467f3b6b392f1d176d828c753b77]
+entity db--><g id="elem_db"><path d="M323,1044.6094 C323,1034.6094 420,1034.6094 420,1034.6094 C420,1034.6094 517,1034.6094 517,1044.6094 L517,1124.0469 C517,1134.0469 420,1134.0469 420,1134.0469 C420,1134.0469 323,1134.0469 323,1124.0469 L323,1044.6094 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;"/><path d="M323,1044.6094 C323,1054.6094 420,1054.6094 420,1054.6094 C420,1054.6094 517,1054.6094 517,1044.6094 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="72" x="384" y="1075.2188">Database</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="103" x="368.5" y="1091.1914">[MS SQL SERVER]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="418" y="1108.3613"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="333" y="1125.9707">Stores products information</text></g><!--MD5=[53eaeeaab093860195211b6c969de6a9]
+entity printer--><g id="elem_printer"><rect fill="#85BBF0" height="90.4375" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="189" x="533.5" y="815.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="81" x="587.5" y="842.2188">Printer API</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136" x="560" y="858.1914">[.Net with ASP.NET Core]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="626" y="875.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="543.5" y="892.9707">Print receipt and payments</text></g><!--MD5=[7da1cdf048f3a7f119a19ca4633d3026]
+entity eps--><g id="elem_eps"><rect fill="#85BBF0" height="128.1719" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="758" y="796.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="147" x="791.5" y="823.2188">Electronic payment</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="85" x="824.5" y="843.3438">system API</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136" x="799" y="859.3164">[.Net with ASP.NET Core]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="865" y="876.4863"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="768" y="894.0957">Send EPS requests to the EPS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="21" x="856.5" y="911.7051">API</text></g><!--MD5=[188076f3693b8dd2365306e5939a3662]
+entity exterLoyaltySystem--><g id="elem_exterLoyaltySystem"><rect fill="#999999" height="92.9531" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="196" x="1056" y="814.1094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="176" x="1066" y="840.7188">External loyalty system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1152" y="858.7676"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="1076.5" y="876.377">Stores information about</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="1078.5" y="893.9863">customers loyalty points</text></g><!--MD5=[ddb1a9ee109b2fae427bdac48916bbbf]
+entity exterNipSystem--><g id="elem_exterNipSystem"><rect fill="#999999" height="92.9531" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="199" x="1287.5" y="814.1094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="153" x="1310.5" y="840.7188">External NIP system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1385" y="858.7676"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="1325" y="876.377">Stores all of the NIP</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="1297.5" y="893.9863">information about customers</text></g><!--MD5=[8d50c059ce5100f4fa64edeae0858b82]
+entity exterPromoSystem--><g id="elem_exterPromoSystem"><rect fill="#999999" height="113.0781" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="210" x="1522" y="804.1094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="147" x="1551.5" y="830.7188">External Promotion</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="55" x="1599.5" y="850.8438">system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1625" y="868.8926"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="1536" y="886.502">Stores promotion information</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="1579.5" y="904.1113">about products</text></g><!--MD5=[92848cbaf65985a669855153c5362c37]
+entity customer--><g id="elem_customer"><rect fill="#08427B" height="140.9531" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="217" x="634.5" y="54.6094"/><image height="48" width="48" x="719" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="64.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="75" x="705.5" y="129.2188">Customer</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="741" y="147.2676"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="648.5" y="164.877">A customer of the shop, trying</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="688.5" y="182.4863">to pay purchases</text></g><!--MD5=[b6c3b30f1dabb7a96cabff3279cd2332]
+entity cashier--><g id="elem_cashier"><rect fill="#08427B" height="158.5625" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="211" x="886.5" y="45.6094"/><image height="48" width="48" x="968" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="55.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="59" x="962.5" y="120.2188">Cashier</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="990" y="138.2676"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="900.5" y="155.877">Shop worker, managing SCO</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="907" y="173.4863">settings, helping buyers to</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="951.5" y="191.0957">finalize order</text></g><!--MD5=[42bca9335c471dd5687971eddc2ce696]
+link customer to spa--><g id="link_customer_spa"><path d="M773.81,195.9294 C791.61,236.2594 814.04,287.0894 832.43,328.7794 " fill="none" id="customer-to-spa" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="835.7,336.1794,835.214,327.6492,829.725,330.0721,835.7,336.1794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="814" y="248.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="45" x="806" y="263.1602">[HTTPS]</text></g><!--MD5=[19223ff220300bf8d927bccd23d50259]
+link cashier to spa--><g id="link_cashier_spa"><path d="M957.01,204.7594 C939.82,243.4194 919.14,289.8894 901.95,328.5394 " fill="none" id="cashier-to-spa" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="898.56,336.1594,904.545,330.0619,899.0599,327.63,898.56,336.1594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="949" y="248.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="45" x="941" y="263.1602">[HTTPS]</text></g><!--MD5=[a1e188b6b409966664dab7d05eb85591]
+link iden to idenDb--><g id="link_iden_idenDb"><path d="M157,914.6594 C157,942.7394 157,977.6894 157,1008.4594 " fill="none" id="iden-to-idenDb" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="157,1016.5994,160,1008.5994,154,1008.5994,157,1016.5994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="163" y="968.0664">Read &amp; write to</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="97" x="158" y="983.1602">[async, ADO.NET]</text></g><!--MD5=[aac696e17eb0898ecb6645fda8d2ce4b]
+link sign to db--><g id="link_sign_db"><path d="M413.16,914.6594 C414.52,948.3194 416.29,991.8194 417.69,1026.1894 " fill="none" id="sign-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="418.02,1034.2694,420.7036,1026.1578,414.7083,1026.3933,418.02,1034.2694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="422" y="968.0664">Read &amp; write to</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="97" x="417" y="983.1602">[async, ADO.NET]</text></g><!--MD5=[8c384236f6897d79f1703c3e0a5a7dba]
+link gateway to iden--><g id="link_gateway_iden"><path d="M759.25,631.5894 C641.33,641.1294 450.04,668.8894 307,749.6094 C280.39,764.6194 252.97,783.5594 228.96,801.4794 " fill="none" id="gateway-to-iden" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="222.28,806.4994,230.4766,804.0877,226.8697,799.2928,222.28,806.4994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="436.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="118" x="392" y="738.1602">[async, JSON/HTTPS]</text></g><!--MD5=[e758a5bf41956f96aa6dc0d16676292c]
+link gateway to sign--><g id="link_gateway_sign"><path d="M759.12,644.7094 C684.49,661.6294 586.35,693.0994 516,749.6094 C497.14,764.7594 478.33,783.1594 461.94,800.5394 " fill="none" id="gateway-to-sign" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="456.48,806.3894,464.133,802.5906,459.7481,798.4951,456.48,806.3894" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="619.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="118" x="575" y="738.1602">[async, JSON/HTTPS]</text></g><!--MD5=[00cdd27fa84bdb8463f15912ebf8c069]
+link gateway to printer--><g id="link_gateway_printer"><path d="M776.15,679.6394 C763.1,688.8994 750.29,698.9994 739,709.6094 C707.95,738.7994 679.5,777.5994 659.18,808.4194 " fill="none" id="gateway-to-printer" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="654.71,815.2694,661.594,810.2086,656.5689,806.93,654.71,815.2694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="784.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="118" x="740" y="738.1602">[async, JSON/HTTPS]</text></g><!--MD5=[6fcd80fa4adc51662bac887df6069cf0]
+link gateway to eps--><g id="link_gateway_eps"><path d="M867,679.7694 C867,711.8494 867,753.1394 867,788.0594 " fill="none" id="gateway-to-eps" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="867,796.3294,870,788.3294,864,788.3294,867,796.3294" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="912.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="118" x="868" y="738.1602">[async, JSON/HTTPS]</text></g><!--MD5=[bd88d6d1dc12ceb86e012b5bc0b44400]
+link spa to gateway--><g id="link_spa_gateway"><path d="M867,479.6694 C867,506.5894 867,537.0294 867,563.0494 " fill="none" id="spa-to-gateway" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="867,571.3294,870,563.3294,864,563.3294,867,571.3294" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="912.5" y="523.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="118" x="868" y="538.1602">[async, JSON/HTTPS]</text></g><!--MD5=[9ccd6e62a4d134327e4e373426a07489]
+link gateway to exterLoyaltySystem--><g id="link_gateway_exterLoyaltySystem"><path d="M953.52,679.6594 C967.69,689.2094 981.98,699.3894 995,709.6094 C1033.61,739.9394 1073.81,777.9194 1104.12,808.0794 " fill="none" id="gateway-to-exterLoyaltySystem" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1110.05,813.9994,1106.5047,806.2257,1102.2674,810.4737,1110.05,813.9994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1057.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1032" y="738.1602">[JSON/HTTPS]</text></g><!--MD5=[c02f701a318e4811a0019ade477ae4ea]
+link gateway to exterNipSystem--><g id="link_gateway_exterNipSystem"><path d="M974.67,645.4594 C1059.11,663.4594 1177.45,695.9494 1270,749.6094 C1296.57,765.0094 1321.93,787.5194 1342.21,808.1794 " fill="none" id="gateway-to-exterNipSystem" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1347.79,813.9394,1344.3828,806.1042,1340.071,810.2765,1347.79,813.9394" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1276.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1251" y="738.1602">[JSON/HTTPS]</text></g><!--MD5=[e0a413fd2e6218259d84f128f0433f95]
+link gateway to exterPromoSystem--><g id="link_gateway_exterPromoSystem"><path d="M974.67,628.6194 C1106.6,635.1594 1333.56,659.9094 1504,749.6094 C1527.89,762.1794 1550.87,780.4094 1570.36,798.4194 " fill="none" id="gateway-to-exterPromoSystem" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1576.29,803.9994,1572.5205,796.3319,1568.4083,800.7011,1576.29,803.9994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1498.5" y="723.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1473" y="738.1602">[JSON/HTTPS]</text></g><rect fill="none" height="174.4844" id="_legend" rx="7.5" ry="7.5" style="stroke:none;stroke-width:1.0;" width="144" x="1588" y="1204.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53" x="1594" y="1227.1426">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1647" y="1227.1426"> </text><rect fill="#08427B" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1230.2188"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1598" y="1244.752">person</text><rect fill="#1168BD" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1247.8281"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1598" y="1262.3613">system</text><rect fill="#438DD5" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1265.4375"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="1598" y="1279.9707">container</text><rect fill="#85BBF0" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1283.0469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1598" y="1297.5801">component</text><rect fill="#686868" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1300.6563"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1598" y="1315.1895">external person</text><rect fill="#999999" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1318.2656"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1598" y="1332.7988">external system</text><rect fill="#B3B3B3" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1335.875"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="1598" y="1350.4082">external container</text><rect fill="#CCCCCC" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="1594" y="1353.4844"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="1598" y="1368.0176">external component</text><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1212.6094" y2="1212.6094"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1230.2188" y2="1230.2188"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1247.8281" y2="1247.8281"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1265.4375" y2="1265.4375"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1283.0469" y2="1283.0469"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1300.6563" y2="1300.6563"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1318.2656" y2="1318.2656"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1335.875" y2="1335.875"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1353.4844" y2="1353.4844"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1726" y1="1371.0938" y2="1371.0938"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1594" x2="1594" y1="1212.6094" y2="1371.0938"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1726" x2="1726" y1="1212.6094" y2="1371.0938"/><!--MD5=[df854d88d766f04fd73001ebbd719cc6]
+@startuml
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include ./../C4_Component.puml
+!else
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!endif
+
+LAYOUT_WITH_LEGEND()
+
+
+Person(customer, Customer, "A customer of the shop, trying to pay purchases")
+Person(cashier, Cashier, "Shop worker, managing SCO settings, helping buyers to finalize order")
+
+title Cointainer diagram for SCO System
+
+System_Boundary(system, "SCO"){
+
+Component(gateway, "API Gateway", ".Net with ASP.NET Core", "Routers all requests to appropriate services endpoints")
+
+Container(spa, "Single Page Application", "javascript and angular", "Provides all the retail functionality to customers via the singelpage application on SCO screen.")
+
+Rel(customer, spa, "Uses", "HTTPS")
+Rel(cashier, spa, "Uses", "HTTPS")
+
+Boundary(idenBoundary, "Identity"){
+Component(iden, "Identity service", ".Net with ASP.NET Core", "Manages workers accounts and provide authentitication")
+ContainerDb(idenDb, "Database", "MS SQL SERVER", "Stores cashier information, hashed authentication credentials, access logs, etc.")
+    Rel(iden, idenDb, "Read & write to", "async, ADO.NET")
+}
+
+Boundary(api, "SCO Service "){
+    Component(sign, "SCO API Server", ".Net with ASP.NET Core", "Allows customers to buy products in the market")
+    ContainerDb(db, "Database", "MS SQL SERVER", "Stores products information")
+    Component(printer, "Printer API", ".Net with ASP.NET Core", "Print receipt and payments")
+    Component(eps, "Electronic payment system API", ".Net with ASP.NET Core", "Send EPS requests to the EPS API")
+
+    Rel(sign, db, "Read & write to", "async, ADO.NET")
+    Rel(gateway, iden, "Uses", "async, JSON/HTTPS")
+    Rel(gateway, sign, "Uses", "async, JSON/HTTPS")
+    Rel(gateway, printer, "Uses", "async, JSON/HTTPS")
+    Rel(gateway, eps, "Uses", "async, JSON/HTTPS")
+}
+
+Rel(spa, gateway, "Uses", "async, JSON/HTTPS")
+
+}
+
+Boundary(exter, "External systems"){
+  System_Ext(exterLoyaltySystem, "External loyalty system", "Stores information about customers loyalty points")
+  System_Ext(exterNipSystem, "External NIP system", "Stores all of the NIP information about customers")
+  System_Ext(exterPromoSystem, "External Promotion system", "Stores promotion information about products")
+  Rel(gateway, exterLoyaltySystem, "Uses", "JSON/HTTPS")
+  Rel(gateway, exterNipSystem, "Uses", "JSON/HTTPS")
+  Rel(gateway, exterPromoSystem, "Uses", "JSON/HTTPS")
+}
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam shadowing<<legendArea>> false
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    BorderStyle dashed
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<boundary>>StereotypeFontColor transparent
+skinparam rectangle<<boundary>>StereotypeFontColor transparent
+
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+sprite $robot [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000005BFFFFFFFFFFFFFFFFFFFFFE9100000000000
+0000000000AFFFFFFFFFFFFFFFFFFFFFFFFFE30000000000
+0000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFE1000000000
+000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000000000
+000000004FFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000699405FFFFFFC427FFFFFFFFFC427FFFFFFE009982000
+008FFF705FFFFFE10006FFFFFFFE00007FFFFFE00FFFF100
+00CFFF705FFFFFA00001FFFFFFF900002FFFFFE00FFFF500
+00DFFF705FFFFFB00002FFFFFFFA00003FFFFFE00FFFF500
+00DFFF705FFFFFF4000AFFFFFFFF3000BFFFFFE00FFFF500
+00DFFF705FFFFFFFA8DFFFFFFFFFFA8DFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00CFFF705FFFFFF87777777777777777CFFFFFE00FFFF500
+008FFF705FFFFFF100000000000000009FFFFFE00FFFF100
+000699405FFFFFF76666666666666666CFFFFFE009982000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000004FFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000
+000000000EFFFFFFFFFFFFFFFFFFFFFFFFFFFF7000000000
+0000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFD0000000000
+00000000004CFFFFFFFFFFFFFFFFFFFFFFFF910000000000
+000000000000011111111111111111111110000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $robot2 [48x48/16] {
+000000000000000088888888888888880000000000000000
+000000000000000AFFFFFFFFFFFFFFFFA000000000000000
+00000000000000CFFFFFFFFFFFFFFFFFFC00000000000000
+00000000000004EFFFFFFFFFFFFFFFFFFE40000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFFA0000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000888FFFFFFFFFFFFFFFFFFFF88800000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000000888FFFFFFFFFFFFFFFFFFFF88800000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000004CFFFFFFFFFFFFFFFFFFC40000000000000
+000000488888848CFFFFFFFFFFFFFFFFC848888884000000
+00000CFFFFFFFFC888888888888888888CFFFFFFFFC00000
+00008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000
+0000CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0000CFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFC0000
+00008FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF80000
+00000CFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFC00000
+000000488887578888888888888888888864688884000000
+000000000000000000000000000000000000000000000000
+}
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam database<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam queue<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam person<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam actor<<component>> {
+    StereotypeFontColor #85BBF0
+    FontColor #85BBF0
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam database<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam queue<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam person<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam actor<<external_component>> {
+    StereotypeFontColor #CCCCCC
+    FontColor #CCCCCC
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hide stereotype
+legend right
+|<color:#000000>**Legend**</color> |
+|<#08427B> person |
+|<#1168BD> system |
+|<#438DD5> container |
+|<#85BBF0> component |
+|<#686868> external person |
+|<#999999> external system |
+|<#B3B3B3> external container |
+|<#CCCCCC> external component |
+endlegend
+
+
+rectangle "<$person>\n== Customer\n\n A customer of the shop, trying to pay purchases" <<person>> as customer 
+rectangle "<$person>\n== Cashier\n\n Shop worker, managing SCO settings, helping buyers to finalize order" <<person>> as cashier 
+
+title Cointainer diagram for SCO System
+
+  rectangle "== SCO\n<size:12>[System]</size>" <<system_boundary>><<boundary>> as system {
+
+rectangle "== API Gateway\n//<size:12>[.Net with ASP.NET Core]</size>//\n\nRouters all requests to appropriate services endpoints" <<component>> as gateway 
+
+rectangle "== Single Page Application\n//<size:12>[javascript and angular]</size>//\n\nProvides all the retail functionality to customers via the singelpage application on SCO screen." <<container>> as spa 
+
+customer - ->> spa : **Uses**\n//<size:12>[HTTPS]</size>//
+cashier - ->> spa : **Uses**\n//<size:12>[HTTPS]</size>//
+
+rectangle "== Identity" <<boundary>> as idenBoundary {
+rectangle "== Identity service\n//<size:12>[.Net with ASP.NET Core]</size>//\n\nManages workers accounts and provide authentitication" <<component>> as iden 
+database "== Database\n//<size:12>[MS SQL SERVER]</size>//\n\nStores cashier information, hashed authentication credentials, access logs, etc." <<container>> as idenDb 
+    iden - ->> idenDb : **Read & write to**\n//<size:12>[async, ADO.NET]</size>//
+}
+
+rectangle "== SCO Service " <<boundary>> as api {
+    rectangle "== SCO API Server\n//<size:12>[.Net with ASP.NET Core]</size>//\n\nAllows customers to buy products in the market" <<component>> as sign 
+    database "== Database\n//<size:12>[MS SQL SERVER]</size>//\n\nStores products information" <<container>> as db 
+    rectangle "== Printer API\n//<size:12>[.Net with ASP.NET Core]</size>//\n\nPrint receipt and payments" <<component>> as printer 
+    rectangle "== Electronic payment system API\n//<size:12>[.Net with ASP.NET Core]</size>//\n\nSend EPS requests to the EPS API" <<component>> as eps 
+
+    sign - ->> db : **Read & write to**\n//<size:12>[async, ADO.NET]</size>//
+    gateway - ->> iden : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+    gateway - ->> sign : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+    gateway - ->> printer : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+    gateway - ->> eps : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+}
+
+spa - ->> gateway : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+
+}
+
+rectangle "== External systems" <<boundary>> as exter {
+  rectangle "== External loyalty system\n\n Stores information about customers loyalty points" <<external_system>> as exterLoyaltySystem 
+  rectangle "== External NIP system\n\n Stores all of the NIP information about customers" <<external_system>> as exterNipSystem 
+  rectangle "== External Promotion system\n\n Stores promotion information about products" <<external_system>> as exterPromoSystem 
+  gateway - ->> exterLoyaltySystem : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+  gateway - ->> exterNipSystem : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+  gateway - ->> exterPromoSystem : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+}
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1251
+Language: en
+Country: US
+--></g></svg>
