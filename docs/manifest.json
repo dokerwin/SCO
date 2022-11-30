@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Zak/SCO/SCO.Documentation/docfx_project",
+  "source_base_path": "C:/docfx_walkthrough/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -48,10 +48,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "yuqGK1kym4vbyNklpQEHElUZNUxEek3yXEMCF46BoKk="
+          "hash": "0ih5L4Ci8SKz+pruaxv8ALNYPINkJxGMlP9celr9ljc="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -104,7 +104,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 4,
-          "skipped_file_count": 4
+          "skipped_file_count": 3
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
