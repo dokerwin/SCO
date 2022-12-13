@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SCO.BasketService.Application\SCO.BasketService.Application.csproj" />
+    <ProjectReference Include="..\SCO.BasketService.Domain\SCO.BasketService.Domain.csproj" />
+    <ProjectReference Include="..\SCO.BasketService.EntityFramework\SCO.BasketService.EntityFramework.csproj" />
+    <ProjectReference Include="..\SCO.ProductService.Application\SCO.ProductService.Application.csproj" />
+    <ProjectReference Include="..\SCO.ProductService.Infrastructure\SCO.ProductService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
