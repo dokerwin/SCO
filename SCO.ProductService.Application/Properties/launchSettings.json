@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SCO.ProductService.Application": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
