@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SCO.BasketService.Domain\SCO.BasketService.Domain.csproj" />
+    <ProjectReference Include="..\SCO.Interfaces\SCO.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
