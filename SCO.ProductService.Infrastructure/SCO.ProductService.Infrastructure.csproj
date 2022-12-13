@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SCO.ProductService.Application\SCO.ProductService.Application.csproj" />
+    <ProjectReference Include="..\SCO.ProductService.Domain\SCO.ProductService.Domain.csproj" />
+    <ProjectReference Include="..\SCO.ProductService.EntityFramework\SCO.ProductService.EntityFramework.csproj" />
+  </ItemGroup>
+
+</Project>
