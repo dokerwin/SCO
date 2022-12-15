@@ -8,19 +8,18 @@ namespace SCO.BaskerService.Infrastructure.Persitence;
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly SCOBasketServiceContext _context;
-    private readonly ILogger _logger;
+    private readonly ILogger<UnitOfWork> _logger;
 
    
     public IOrderRepository Orders { get; private set; }
    
     public UnitOfWork(SCOBasketServiceContext context,
-        ILoggerFactory loggerFactory, IOrderRepository orderRepository
+        ILogger<UnitOfWork> loggerFactory, IOrderRepository orderRepository
        
         )
     {
         _context = context;
-        _logger = loggerFactory.CreateLogger("logs");
-
+        _logger = loggerFactory;
         Orders = orderRepository;
         
     }

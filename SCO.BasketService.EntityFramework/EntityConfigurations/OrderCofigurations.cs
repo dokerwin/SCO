@@ -9,6 +9,6 @@ public class UserConfiguration : IEntityTypeConfiguration<Order>
     public void Configure(EntityTypeBuilder<Order> entityTypeBuilder)
     {
         entityTypeBuilder.Property(b => b.Id).IsRequired();
-        entityTypeBuilder.Property(b => b.Payment).IsRequired();
+        entityTypeBuilder.Property(b => b.PaymentId).IsRequired();
     }
 }

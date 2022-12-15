@@ -8,7 +8,8 @@ namespace SCO.BasketService.Infrastructure.Persitence;
 
 public class OrderRepository : Repository<Order>, IOrderRepository
 {
-    public OrderRepository(SCOBasketServiceContext context, ILogger logger) : base(context, logger)
+    public OrderRepository(SCOBasketServiceContext context, 
+        ILogger<OrderRepository> logger) : base(context, logger)
     {
     }
 

@@ -10,11 +10,11 @@ public class Repository<T> : IRepository<T> where T : EntityBase<Guid>
 {
     protected readonly DbContext _context;
     internal DbSet<T> _dbSet;
-    public readonly ILogger _logger;
+    public readonly ILogger<Repository<T>> _logger;
 
     public Repository(
         DbContext context,
-        ILogger logger)
+        ILogger<Repository<T>> logger)
     {
         _context = context;
         _dbSet = context.Set<T>();

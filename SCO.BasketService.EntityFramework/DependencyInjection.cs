@@ -8,16 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SCO.ProductService.EntityFramework
+namespace SCO.BasketService.EntityFramework;
+
+public static class DependencyInjection
 {
-    public static class DependencyInjection
+    public static IServiceCollection AddEntityFramework(this IServiceCollection services, IConfiguration Configuration)
     {
-        public static IServiceCollection AddEntityFramework(this IServiceCollection services, IConfiguration Configuration)
-        {
-            services.AddDbContext<SCOBasketServiceContext>(
-            optionsAction => optionsAction.UseSqlServer(Configuration.GetConnectionString("SCOConnectionString"),
-            x => x.MigrationsAssembly("SCO.EntityFramework.DbMigrations")));
-            return services;
-        }
+        services.AddDbContext<SCOBasketServiceContext>(
+        optionsAction => optionsAction.UseSqlServer(Configuration.GetConnectionString("SCO_BasketService_ConnectionString"),
+        x => x.MigrationsAssembly("SCO.EntityFramework.DbMigrations")));
+        return services;
     }
 }
