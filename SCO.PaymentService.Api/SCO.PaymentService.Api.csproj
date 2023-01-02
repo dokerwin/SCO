@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dfd3826e-1997-4c49-b1f5-45a9903de28e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SCO.Contracts\SCO.Contracts.csproj" />
+    <ProjectReference Include="..\SCO.PaymentService.Application\SCO.PaymentService.Application.csproj" />
+    <ProjectReference Include="..\SCO.PaymentService.EntityFramework\SCO.PaymentService.EntityFramework.csproj" />
+    <ProjectReference Include="..\SCO.PaymentService.Infrastructure\SCO.PaymentService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
