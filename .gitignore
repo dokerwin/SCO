@@ -1,3 +1,6 @@
+**/bin/*
+**/obj/*
+**/.vs/*
 SCO.Application/obj/Debug/net6.0/SCO.Application.assets.cache
 SCO.Application/obj/Debug/net6.0/SCO.Application.csproj.AssemblyReference.cache
 SCO.Application/obj/Debug/net6.0/SCO.Application.GeneratedMSBuildEditorConfig.editorconfig
@@ -54,3 +57,5 @@ SCO.Domain/bin
 SCO.Application/bin
 SCO.Application/obj
 SCO.Contracts/bin
+.vs/ProjectEvaluation
+SCO.Documentation/docfx_project/obj

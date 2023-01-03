@@ -1,6 +1,6 @@
 ﻿using SCO.Domain.Entities.Base;
 
-namespace SCO.Domain.Entities;
+namespace SCO.Domain.Entities.Product;
 
 public class ProductOwner : EntityBase<Guid>
 {

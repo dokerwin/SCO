@@ -1,0 +1,79 @@
+version: '3.4'
+
+services:
+  
+  rabbitmq3:
+        container_name: "rabbitmq"
+        image: rabbitmq:3.8-management-alpine
+        ports:
+            # AMQP protocol port
+            - '5672:5672'
+            # HTTP management UI
+            - '15672:15672'
+        networks:
+           - mynet
+        volumes:
+           - ./data:/var/lib/rabbitmq:rw
+           - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
+           - ./rabbitmq/definitions.json:/opt/definitions.json:ro
+
+  jenkins:
+        image: jenkins/jenkins:lts
+        privileged: true
+        user: root
+        ports:
+          - 8080:8080
+          - 50000:50000
+        container_name: jenkins-lts
+        volumes:
+          - ~/jenkins_home:/var/jenkins_home
+          - /var/run/docker.sock:/var/run/docker.sock
+          - /usr/local/bin/docker:/usr/local/bin/docker
+
+  sco.api:
+    image: ${DOCKER_REGISTRY-}scoapi
+    networks:
+       - mynet
+    build:
+      context: .
+      dockerfile: SCO.Api/Dockerfile
+
+    depends_on:
+      - "rabbitmq3"
+      links:
+      - "rabbitmq3"
+
+  sco.paymentservice.api:
+    image: ${DOCKER_REGISTRY-}scopaymentserviceapi
+    build:
+      context: .
+      dockerfile: SCO.PaymentService.Api/Dockerfile
+    depends_on:
+      - "rabbitmq3"
+    links:
+      - "rabbitmq3"
+
+
+  sco.basketservice.api:
+    image: ${DOCKER_REGISTRY-}scobasketserviceapi
+    build:
+      context: .
+      dockerfile: SCO.BasketService.Api/Dockerfile
+    links:
+      - "rabbitmq3"
+    depends_on:
+      - "rabbitmq3"
+
+  sco.productservice:
+    image: ${DOCKER_REGISTRY-}scoproductservice
+    build:
+      context: .
+      dockerfile: SCO.ProductService/Dockerfile
+    depends_on:
+      - "rabbitmq3"
+
+networks:
+  mynet:
+    driver: bridge
+    name: mynet
+  

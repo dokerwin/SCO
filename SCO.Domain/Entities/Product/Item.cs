@@ -1,9 +1,9 @@
 ﻿using SCO.Domain.Entities.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SCO.Domain.Entities;
+namespace SCO.Domain.Entities.Product;
 
-public class Product : EntityBase<Guid>
+public class Item : EntityBase<Guid>
 {
     public string Barcode { get; set; }
     public string Name { get; set; }
@@ -22,5 +22,6 @@ public class Product : EntityBase<Guid>
 
     [ForeignKey(nameof(ProductOwnerId))]
     public virtual ProductOwner? ProductOwner { get; set; }
+    public object Quantity { get; set; }
 }
 

@@ -1,8 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     
   <ItemGroup>
     <ProjectReference Include="..\SCO.Application\SCO.Application.csproj" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <ProjectReference Include="..\SCO.EntityFramework\SCO.EntityFramework.csproj" />
+    <ProjectReference Include="..\SCO.ProductService.Application\SCO.ProductService.Application.csproj" />
+    <ProjectReference Include="..\SCO.ProductService.EntityFramework\SCO.ProductService.EntityFramework.csproj" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
