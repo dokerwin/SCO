@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SCO.BasketService.Domain;
-using SCO.Interfaces;
+using SCO.Contracts.DTOs;
+using Item = SCO.BasketService.Domain.Entities.Item;
 
 namespace SCO.BasketService.Application.Commands;
 
@@ -15,18 +16,20 @@ public class BasketCommandService : IBasketCommandService
         _basketLogic = basketLogic;
     }
 
-    public void AddItemToBasket(Guid itemDtoId)
+    public void AddItemToBasket(ItemDto itemDto)
     {
-        _basketLogic.AddItemToBasket(itemDtoId);
+        var item = _mapper.Map<Item>(itemDto);
+        _basketLogic.AddItemToBasket(item);
     }
+
 
     public void CalculatePromo(Guid itemDtoId)
     {
         
     }
 
-    public void DeletItemFromBasket(Guid itemDtoId)
+    public void DeletItemFromBasket(Guid itemId)
     {
-        
+        _basketLogic.RemoveItemFromBasket(itemId);
     }
 }

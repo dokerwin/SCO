@@ -15,7 +15,6 @@
     <ProjectReference Include="..\SCO.BasketService.Domain\SCO.BasketService.Domain.csproj" />
     <ProjectReference Include="..\SCO.BasketService.EntityFramework\SCO.BasketService.EntityFramework.csproj" />
     <ProjectReference Include="..\SCO.ProductService.Application\SCO.ProductService.Application.csproj" />
-    <ProjectReference Include="..\SCO.ProductService.Infrastructure\SCO.ProductService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SCO.BasketService.Domain\SCO.BasketService.Domain.csproj" />
+    <ProjectReference Include="..\SCO.Contracts\SCO.Contracts.csproj" />
     <ProjectReference Include="..\SCO.Interfaces\SCO.Interfaces.csproj" />
   </ItemGroup>
 

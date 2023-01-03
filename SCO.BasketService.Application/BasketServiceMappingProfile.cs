@@ -1,20 +1,16 @@
 ﻿using AutoMapper;
-using SCO.Application.DTOs;
 using SCO.BasketService.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SCO.Contracts.DTOs;
 
 namespace SCO.BasketService.Application;
 
 public class BasketServiceMappingProfile : Profile
 {
+    /// <summary>
+    /// Mapper configuration for Item
+    /// </summary>
     public BasketServiceMappingProfile()
     {
-        CreateMap<Item, ItemDto>();
-               
-    }
-   
+        CreateMap<Item, ItemDto>();          
+    } 
 }

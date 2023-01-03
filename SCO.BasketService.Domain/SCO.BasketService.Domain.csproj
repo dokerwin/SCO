@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SCO.Domain\SCO.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AggregateRoot\" />
   </ItemGroup>
 
 </Project>

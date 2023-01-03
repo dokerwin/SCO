@@ -10,17 +10,38 @@ public class BasketLogic : IBasketLogic
         _order = new Order();
     }
 
-    public void AddItemToBasket(Guid item)
+    public void AbortOrder()
     {
-        _order.Items.Add(new Item() { Id = item });
+        _order.OrderStatus = (int)Enums.OrderStatus.Closed;
+    }
+
+    public void AddItemToBasket(Item item)
+    {
+        _order.AddItem(item);
+    }
+
+    public void CloseOrder()
+    {
+        _order.OrderStatus = (int)Enums.OrderStatus.Closed;
+    }
+
+    public Order GetActualOrder()
+    {
+        return _order;
+    }
+
+    public decimal GetBasketPrice()
+    {
+       return _order.Items.Sum(x => x.Price);
+    }
+
+    public void OpenOrder()
+    {
+        _order.OrderStatus = (int)Enums.OrderStatus.Open;
     }
 
     public void RemoveItemFromBasket(Guid itemId)
     {
-        _order.Items.ForEach(x =>
-        {
-            if (x.Id == itemId)
-                _order.Items.Remove(x);
-        });
+        _order.DeleteItem(itemId);
     }
 }

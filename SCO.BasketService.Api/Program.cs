@@ -1,7 +1,16 @@
+using MassTransit;
+using MassTransit.Contracts;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using SCO.BaskerService.Infrastructure.Persitence;
+using SCO.BasketService.Application;
 using SCO.BasketService.Application.Common.Interfaces.Persistance;
+using SCO.BasketService.Application.MassTransit;
+using SCO.BasketService.Domain;
 using SCO.BasketService.EntityFramework;
+using SCO.BasketService.Infrastructure;
 using SCO.BasketService.Infrastructure.Persitence;
+using SCO.Contracts.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,12 +21,34 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddInfrastructure();
+builder.Services.AddApplication();
 builder.Services.AddEntityFramework(builder.Configuration);
 
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddLogging();
+
+var rabbitSection = builder.Configuration.GetSection("RabitServer");
+var url = rabbitSection.GetValue<string>("Url");
+var host = rabbitSection.GetValue<string>("Host");
+
+builder.Services.AddMassTransit(config =>
+{
+    config.AddBus(context => Bus.Factory.CreateUsingRabbitMq(c =>
+    {
+        c.Host($"rabbitmq://{url}/{host}", configurator =>
+        {
+            configurator.Username("guest");
+            configurator.Password("guest");
+        });
+        c.ConfigureEndpoints(context, SnakeCaseEndpointNameFormatter.Instance);
+    }));
+
+    config.AddConsumer<OrderConsumer>();
+    config.AddConsumer<AddItemToBasketConsumer>();
+});
+
+
+
 
 var app = builder.Build();
 
