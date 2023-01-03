@@ -1,0 +1,8 @@
+﻿using SCO.Identity.Domain.Entities.Employees;
+
+namespace SCO.Identity.Application.Common.Interfaces.Persistance;
+
+public interface ICashierRepository : IRepository<Cashier> 
+{
+    Task<Cashier> GetActualCashier();
+}
