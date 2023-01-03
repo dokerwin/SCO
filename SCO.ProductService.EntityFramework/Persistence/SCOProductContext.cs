@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using SCO.ProductService.Domain.Entities;
 
-
 namespace SCO.ProductService.EntityFramework.Persistence;
 
 public class SCOProductContext : DbContext
@@ -15,8 +14,8 @@ public class SCOProductContext : DbContext
     }
     public virtual DbSet<Category> Categories { get; set; }
     public virtual DbSet<ProductOwner> ProductOwners { get; set; }
+    public virtual DbSet<ProductType> ProductTypes { get; set; }
     public virtual DbSet<Product> Products { get; set; }
-    public virtual DbSet<Tax> Taxes { get; set; }
     public virtual DbSet<Vat> Vats { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

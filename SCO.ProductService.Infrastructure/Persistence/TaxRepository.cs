@@ -8,7 +8,7 @@ namespace SCO.ProductService.Infrastructure.Persitence;
 
 public class TaxRepository : Repository<Tax>, ITaxRepository
 {
-    public TaxRepository(SCOProductContext context, ILogger logger) : base(context, logger) { }
+    public TaxRepository(SCOProductContext context, ILogger<TaxRepository> logger) : base(context, logger) { }
 
     public override async Task<bool> Upsert(Tax entity)
     {

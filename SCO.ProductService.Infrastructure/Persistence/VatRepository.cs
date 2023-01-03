@@ -8,7 +8,7 @@ namespace SCO.ProductService.Infrastructure.Persitence;
 
 public class VatRepository : Repository<Vat>, IVatRepository
 {
-    public VatRepository(SCOProductContext context, ILogger logger) : base(context, logger)
+    public VatRepository(SCOProductContext context, ILogger<VatRepository> logger) : base(context, logger)
     {
     }
 

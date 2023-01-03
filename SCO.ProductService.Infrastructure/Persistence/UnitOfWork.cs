@@ -7,7 +7,7 @@ namespace SCO.ProductService.Infrastructure.Persitence;
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly SCOProductContext _context;
-    private readonly ILogger _logger;
+    private readonly ILogger<UnitOfWork> _logger;
 
     public IProductOwnerRepository ProductOwners { get; private set; }
     public IProductRepository Products { get; private set; }
@@ -18,16 +18,17 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     public ITaxRepository Taxs { get; private set; }
 
-    public UnitOfWork(SCOProductContext context,
-        ILoggerFactory loggerFactory,
+    public UnitOfWork(ILogger<UnitOfWork> logger,
+        SCOProductContext context,
         IProductOwnerRepository productOwnerRepository,
         IProductRepository productRepository,
         ITaxRepository taxRepository,
-        IVatRepository vatRepository
-        )
+        IVatRepository vatRepository,
+        ICategoryRepository categoryRepository)
     {
+        _logger = logger;   
         _context = context;
-        _logger = loggerFactory.CreateLogger("logs");
+        Categories = categoryRepository;
         Products = productRepository;
         ProductOwners = productOwnerRepository;
         Taxes = taxRepository;

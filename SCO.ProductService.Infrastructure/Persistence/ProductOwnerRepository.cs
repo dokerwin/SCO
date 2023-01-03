@@ -8,7 +8,7 @@ namespace SCO.ProductService.Infrastructure.Persitence;
 
 public class ProductOwnerRepository : Repository<ProductOwner>, IProductOwnerRepository
 {
-    public ProductOwnerRepository(SCOProductContext context, ILogger logger) : base(context, logger) { }
+    public ProductOwnerRepository(SCOProductContext context, ILogger<ProductOwnerRepository> logger) : base(context, logger) { }
 
     public override async Task<bool> Upsert(ProductOwner entity)
     {

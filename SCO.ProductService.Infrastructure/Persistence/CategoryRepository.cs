@@ -9,7 +9,7 @@ namespace SCO.ProductService.Infrastructure.Persitence;
 
 public class CategoryRepository : Repository<Category>, ICategoryRepository
 {
-    public CategoryRepository(SCOProductContext context, ILogger logger) : base(context, logger) { }
+    public CategoryRepository(SCOProductContext context, ILogger<CategoryRepository> logger) : base(context, logger) { }
 
     public override async Task<bool> Upsert(Category entity)
     {
@@ -20,8 +20,7 @@ public class CategoryRepository : Repository<Category>, ICategoryRepository
             if (existingCategory == null)
                 return await Add(entity);
 
-            existingCategory.Name = entity.Name;
-            existingCategory.GategoryIdentifire = entity.GategoryIdentifire;
+            existingCategory.Name = entity.Name; 
 
             return true;
         }

@@ -15,12 +15,12 @@ public static class DependencyInjection
     private static IServiceCollection AddRepositorises(this IServiceCollection services)
     {
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IProductOwnerRepository, ProductOwnerRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ITaxRepository, TaxRepository>();
         services.AddScoped<IVatRepository, VatRepository>();
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }

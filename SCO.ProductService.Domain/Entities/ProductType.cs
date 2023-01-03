@@ -2,8 +2,7 @@
 
 namespace SCO.ProductService.Domain.Entities;
 
-public class Category : EntityBase<Guid>
+public class ProductType : EntityBase<Guid>
 {
-    public string Name { get; set; }
+    public string TypeName { get; set; }
 }
-

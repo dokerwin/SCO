@@ -10,7 +10,7 @@ namespace SCO.Infrastructure.Persitence
     public class ProductRepository : Repository<Product>, IProductRepository
     {
         private readonly SCOProductContext _SCOcontext;
-        public ProductRepository(SCOProductContext SCOcontext, ILogger logger) : base(SCOcontext, logger)
+        public ProductRepository(SCOProductContext SCOcontext, ILogger<ProductRepository> logger) : base(SCOcontext, logger)
         {
             _SCOcontext = SCOcontext;
         }
