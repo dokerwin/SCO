@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using SCO.Application.Services;
 using SCO.Application.DTOs;
-using SCO.Contracts.Authentication;
 using SCO.Application.Services.Authentication.Commands;
-using Microsoft.AspNetCore.Authentication;
+using SCO.Contracts.Identity;
 
 namespace SCO.Api.Conrollers;
 [ApiController]
@@ -24,12 +22,8 @@ public class AuthenticationController : ControllerBase
     {
         var authResult = _authenticationCommandService.Register(registerRequest);
 
-        var response = new AuthenticationResponce(
-            authResult.Id,
-            authResult.FirstName,
-            authResult.LastName,
-            authResult.Email,
-            authResult.Token);
+        var response = new AuthenticatedUserResponse() {
+            };
         return Ok(response);
     }
 
