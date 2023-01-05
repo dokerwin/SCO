@@ -13,7 +13,7 @@ namespace SCO.Identity.Infrastructure.Persitence;
 
 public class CashierRepository : Repository<Cashier>, ICashierRepository
 {
-    public CashierRepository(SCOIndentityContext context, ILogger logger) : base(context, logger) { }
+    public CashierRepository(SCOIndentityContext context, ILogger<CashierRepository> logger) : base(context, logger) { }
 
     public override async Task<bool> Upsert(Cashier entity)
     {
@@ -52,6 +52,24 @@ public class CashierRepository : Repository<Cashier>, ICashierRepository
         catch (Exception ex)
         {
             _logger.LogError(ex, "{Repo} Upsert function error", typeof(CashierRepository));
+            return new Cashier();
+        }
+    }
+
+    public async Task<Cashier> FindByEmailAsync(string email)
+    {
+        try
+        {
+            var actualCashier = await _dbSet.Where(x => x.Email == email).FirstOrDefaultAsync();
+            if (actualCashier is not null)
+                return actualCashier;
+
+            return new Cashier();
+
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "{Repo} FindByEmailAsync function error", typeof(CashierRepository));
             return new Cashier();
         }
     }

@@ -1,6 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using SCO.Identity.Aplications.Validators;
+using SCO.Identity.Application;
 using SCO.Identity.EntityFramework;
 using SCO.Identity.Infrastructure;
-using SCO.Identity.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,11 @@ builder.Services.AddAplication(builder.Configuration);
 builder.Services.AddEntityFramework(builder.Configuration);
 builder.Services.AddInfrastructure();
 builder.Services.AddControllers();
+builder.Services.AddLogging();
+
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterRequstValidator>();
 
 var app = builder.Build();
 

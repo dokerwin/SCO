@@ -14,7 +14,7 @@ public class Repository<T> : IRepository<T> where T : EntityBase<Guid>
 
     public Repository(
         DbContext context,
-        ILogger logger)
+        ILogger<Repository<T>> logger)
     {
         _context = context;
         _dbSet = context.Set<T>();

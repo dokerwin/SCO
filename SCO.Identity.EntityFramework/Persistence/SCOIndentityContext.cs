@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
+using SCO.Identity.Domain;
 using SCO.Identity.Domain.Entities.Employees;
 
 namespace SCO.Identity.EntityFramework.Persistence;
@@ -16,6 +16,8 @@ public class SCOIndentityContext : DbContext
 
     public virtual DbSet<Cashier> Cashiers { get; set; }
     public virtual DbSet<Role> Roles { get; set; }
+
+    public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -8,7 +8,7 @@ namespace SCO.Identity.Infrastructure.Persitence;
 
 public class RoleRepository : Repository<Role>, IRoleRepository
 {
-    public RoleRepository(SCOIndentityContext context, ILogger logger) : base(context, logger) {}
+    public RoleRepository(SCOIndentityContext context, ILogger<RoleRepository> logger) : base(context, logger) {}
 
     public override async Task<bool> Upsert(Role entity)
     {

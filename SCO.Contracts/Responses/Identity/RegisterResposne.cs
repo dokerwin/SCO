@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SCO.Identity.Application.Authentication.Commands.Register;
+namespace SCO.Contracts.Responses.Identity;
 
-public class RegisterCommandHandler
-{
-}
+public record RegisterResponse();
+

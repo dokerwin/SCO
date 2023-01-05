@@ -9,15 +9,17 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+        services.AddRepositorises();
         return services;
     }
 
     private static IServiceCollection AddRepositorises(this IServiceCollection services)
     {
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IUnitOfWork,                 UnitOfWork>();
         services.AddScoped<ICashierRepository,          CashierRepository>();
         services.AddScoped<IRoleRepository,             RoleRepository>();
+        services.AddScoped<IRefreshTokenRepository,     RefreshTokenRepository>();
 
         return services;
     }

@@ -7,26 +7,32 @@ namespace SCO.Identity.Infrastructure.Persitence;
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly SCOIndentityContext _context;
-    private readonly ILogger _logger;
-
     public ICashierRepository Cashiers { get; private set; }
     public IRoleRepository Roles { get; private set; }
+    public IRefreshTokenRepository RefreshTokens { get; private set; }
 
 
     public UnitOfWork(SCOIndentityContext context,
-        ILoggerFactory loggerFactory,
         ICashierRepository cashierRepository,
-        IRoleRepository roleRepository)
+        IRoleRepository roleRepository,
+        IRefreshTokenRepository refreshTokens)
     {
         _context = context;
-        _logger = loggerFactory.CreateLogger("logs");
         Cashiers = cashierRepository;
         Roles = roleRepository;
+        RefreshTokens = refreshTokens;
     }
 
     public async Task CompleteAsync()
     {
-        await _context.SaveChangesAsync();
+        try 
+        { 
+            await _context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("dffdf");   
+        }
     }
 
     public void Dispose()

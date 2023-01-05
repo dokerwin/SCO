@@ -1,40 +1,54 @@
+using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using SCO.Identity.Application.Authentication.Commands;
+using SCO.Identity.Aplications.Authentication.Authenticators;
+using SCO.Identity.Aplications.Authentication.TokenGenerators;
+using SCO.Identity.Aplications.Authentication.TokenValidators;
+using SCO.Identity.Application.Authentication.Models;
 using SCO.Identity.Domain.Entities.Employees;
-using SCO.Identity.Application.Common;
+using System.Reflection;
+using System.Text;
+
+
 
 namespace SCO.Identity.Application;
 public static class DependencyInjection
 {
-    public static IServiceCollection AddAplication(this IServiceCollection services, IConfiguration Configuration )
+    public static IServiceCollection AddAplication(this IServiceCollection services, IConfiguration _configuration )
     {
-        var authenticationSettings = new AuthenticationSettings();
-        Configuration.GetSection("Authentication").Bind(authenticationSettings);
-        services.AddSingleton(authenticationSettings);
-        services.AddAuthentication(o =>
-        {
-            o.DefaultAuthenticateScheme = "Bearer";
-            o.DefaultScheme = "Bearer";
-            o.DefaultChallengeScheme = "Bearer";
-        }).AddJwtBearer(cfg =>
-        {
-            cfg.RequireHttpsMetadata = false;
-            cfg.SaveToken = true;
-            cfg.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidIssuer = authenticationSettings.JwtIssuer,
-                ValidAudience = authenticationSettings.JwtIssuer,
-                IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(authenticationSettings.JwtKey)),
-            };
+        AuthenticationConfiguration authenticationConfiguration = new AuthenticationConfiguration();
+        _configuration.Bind("Authentication", authenticationConfiguration);
 
+        services.AddSingleton(authenticationConfiguration);
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(o =>
+        {
+            o.TokenValidationParameters = new TokenValidationParameters()
+            {
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationConfiguration.AccessTokenSecret)),
+                ValidIssuer = authenticationConfiguration.Issuer,
+                ValidAudience = authenticationConfiguration.Audience,
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ClockSkew = TimeSpan.Zero
+            };
         });
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-        services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
-        services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
         services.AddScoped<IPasswordHasher<Cashier>, PasswordHasher<Cashier>>();
+
+        services.AddSingleton<AccessTokenGenerator>();
+        services.AddSingleton<RefreshTokenGenerator>();
+        services.AddSingleton<RefreshTokenValidator>();
+        services.AddSingleton<TokenGenerator>();
+        services.AddScoped<IAuthenticator, Authenticator>();
+        services.AddScoped<IRefreshTokenValidator , RefreshTokenValidator>();
+        services.AddMediatR(Assembly.GetExecutingAssembly());
+
+       
+
         return services;
     }
 }

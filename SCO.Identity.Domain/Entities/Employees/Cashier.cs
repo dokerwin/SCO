@@ -5,8 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SCO.Identity.Domain.Entities.Employees;
 public class Cashier : EntityBase<Guid>
 {
-    public int CompanyId { get; set; }
-
     [EmailAddress]
     public string Email { get; set; }
     public string Firstname { get; set; }
