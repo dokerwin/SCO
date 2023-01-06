@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SCO.BasketService.Domain.Entities;
 using SCO.Contracts.DTOs;
+using SCO.Contracts.Responses;
 
 namespace SCO.BasketService.Application;
 
@@ -11,6 +12,6 @@ public class BasketServiceMappingProfile : Profile
     /// </summary>
     public BasketServiceMappingProfile()
     {
-        CreateMap<Item, ItemDto>();          
+        CreateMap<Item, ItemDto>().ReverseMap();
     } 
 }

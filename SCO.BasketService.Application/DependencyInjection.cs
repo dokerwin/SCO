@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MassTransit;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using SCO.BasketService.Application.Queries;
 using SCO.BasketService.Domain;
 using System.Reflection;
@@ -8,9 +10,9 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddScoped<IBasketQueryService, BasketQueryService>();
-        services.AddScoped<IBasketLogic, BasketLogic>();
+        services.AddSingleton<IBasketLogic, BasketLogic>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddMediatR(Assembly.GetExecutingAssembly());
 
         return services;
     }

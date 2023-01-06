@@ -1,26 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using SCO.BasketService.Application.Commands;
 using SCO.BasketService.Application.Queries;
-using Microsoft.AspNetCore.Authorization;
-using SCO.ProductService.Application.DTOs.Read.ProductDTOs;
-
+using SCO.Contracts.DTOs;
 
 namespace SCO.BasketService.Conrollers;
 [ApiController]
-[Route("basket")]
-public class ProductController : ControllerBase
+[Route("api/[controller]")]
+public class BasketController : ControllerBase
 {
-    private readonly IBasketQueryService _basketQueryService;
-    public ProductController(IBasketQueryService productQueryService)
+    private readonly IMediator _mediator;
+    public BasketController( IMediator mediator)
     {
-        _basketQueryService = productQueryService;
+        _mediator = mediator;
     }
 
-    [HttpGet("AllProducts")]
-    public ActionResult<IEnumerable<ProductDto>> GetAllProducts()
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<ItemDto>>> GetAllProductsAsync()
     {
         ActionResult returnResult = NotFound();
 
-        var items = _basketQueryService.GetAllProducts();
+        var items = await _mediator.Send(new GetItemsInBasketQuery());
 
         if (items is not null)
         {
@@ -29,14 +29,25 @@ public class ProductController : ControllerBase
         return NotFound("No found products");
     }
 
-
-    [HttpGet("GetPrice")]
-    public decimal GetBasketPrice()
+    [HttpGet("TotalPrice")]
+    public async Task<decimal> GetBasketPriceAsync()
     {
-        ActionResult returnResult = NotFound();
+        var basketTotal = await _mediator.Send(new GetBasketPriceQuery());
 
-        decimal basket = _basketQueryService.GetBasketPrice();
-
-        return basket;
+        return await Task.FromResult(basketTotal.BasketPrice);
     }
+
+    [HttpPost]
+    public async void AddProductToBasket([FromBody] Guid productId)
+    {
+        await _mediator.Send(new AddProductToBasketCommand(productId));
+    }
+
+
+    [HttpDelete]
+    public async void DeleteProductFromBasket([FromBody] Guid productId)
+    {
+        await _mediator.Send(new RemoveProductFromBasketCommand(productId));
+    }
+
 }

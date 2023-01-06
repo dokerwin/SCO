@@ -4,9 +4,7 @@ using SCO.BasketService.Application.Common.Interfaces.Persistance;
 using SCO.Contracts.Requests.Order;
 using SCO.Contracts.DTOs;
 using SCO.Contracts.Responses;
-using SCO.BasketService.Domain;
-using SCO.BasketService.Domain.Entities;
-using SCO.Application.Commands;
+
 
 namespace SCO.BasketService.Application.MassTransit;
 
@@ -14,13 +12,12 @@ public class AddItemToBasketConsumer : IConsumer<AddItemOrderRequest>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
-    private readonly IBasketCommandService _basketLogic;
 
-    public AddItemToBasketConsumer(IUnitOfWork unitOfWork, IMapper mapper, IBasketCommandService basketLogic)
+    public AddItemToBasketConsumer(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
-        _basketLogic = basketLogic;
+        //_basketLogic = basketLogic;
     }
 
     /// <summary>
@@ -32,7 +29,7 @@ public class AddItemToBasketConsumer : IConsumer<AddItemOrderRequest>
     {
         try
         {
-            _basketLogic.AddItemToBasket(context.Message.Item);
+            //_basketLogic.AddItemToBasket(context.Message.Item);
 
             await context.RespondAsync(new AddItemOrderResponse());
         }
