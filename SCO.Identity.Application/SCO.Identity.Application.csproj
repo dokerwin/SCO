@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Authentication\Queries\Register\" />
-    <Folder Include="Authentication\RefreshTokenRepositories\" />
   </ItemGroup>
 
 </Project>

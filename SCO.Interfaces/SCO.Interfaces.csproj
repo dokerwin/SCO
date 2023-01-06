@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SCO.Application\SCO.Application.csproj" />
-    <ProjectReference Include="..\SCO.Domain\SCO.Domain.csproj" />
+    <ProjectReference Include="..\SCO.Application\SCO.Gateway.Application.csproj" />
   </ItemGroup>
 
 </Project>
