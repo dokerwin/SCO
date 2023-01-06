@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MassTransit;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using SCO.ProductService.Application.Queries;
 using System.Reflection;
 
@@ -10,6 +12,8 @@ public static class DependencyInjection
         services.AddScoped<IProductQueryService, ProductQueryService>();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+        services.AddMediatR(Assembly.GetExecutingAssembly());
 
         return services;
     }

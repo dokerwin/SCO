@@ -1,17 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SCO.ProductService.Application.Queries;
+﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SCO.ProductService.Application.DTOs.Read.ProductDTOs;
+using SCO.ProductService.Application.Queries;
 
 namespace SCO.Api.Conrollers;
 [ApiController]
-[Route("product")]
+[Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
     private readonly IProductQueryService _productQueryService;
-    public ProductController(IProductQueryService productQueryService)
+    private readonly IMediator _mediator;
+
+    public IRequest<object> GetAllProductQuery { get; private set; }
+
+    public ProductController(IProductQueryService productQueryService, IMediator mediator)
     {
         _productQueryService = productQueryService;
+        _mediator = mediator;
     }
 
     [HttpGet("{id}")]
@@ -25,42 +31,42 @@ public class ProductController : ControllerBase
 
     [HttpGet("ProductByCategory/{categoryName}")]
     [AllowAnonymous]
-    public ActionResult<IEnumerable<ProductDto>> GetRestaurantByCategory([FromRoute] string categoryName)
+    public async Task<ActionResult<IEnumerable<ProductDto>>> GetRestaurantByCategoryAsync([FromRoute] string categoryName)
     {
-        var restaurant = _productQueryService.GetByCategory(categoryName);
-        if (restaurant is not null)
-        {
-            return Ok(restaurant);
-        }
 
+        var result = await _mediator.Send(new GetProductsByCategoryQuery(new CategoryDto() { Name = categoryName }));
+
+        if (result is not null)
+        {
+            return Ok(result);
+        }
         return NotFound("The category does not exist or empty");
     }
 
     [HttpGet("ProductByName/{productName}")]
     [AllowAnonymous]
-    public ActionResult<IEnumerable<ProductDto>> GetProductByName([FromRoute] string productName)
+    public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductByNameAsync([FromRoute] string productName)
     {
 
-        var restaurant = _productQueryService.GetByName(productName);
-        if (restaurant is not null)
+        var result = await _mediator.Send(new GetProductsByNameQuery(new ProductDto() { ShortName = productName}));
+
+        if (result is not null)
         {
-            return Ok(restaurant);
+            return Ok(result);
         }
 
         return NotFound("The product was not found");
     }
 
-    [HttpGet("AllProducts")]
+    [HttpGet]
     [AllowAnonymous]
-    public ActionResult<IEnumerable<ProductDto>> GetAllProducts()
+    public async Task<ActionResult<IEnumerable<ProductDto>>> GetAllProductsAsync()
     {
-        ActionResult returnResult = NotFound();
+        var result = await _mediator.Send(new GetAllProductsQuery());
 
-        var restaurantsDots = _productQueryService.GetAllProducts();
-
-        if (restaurantsDots is not null)
+        if (result is not null)
         {
-            return Ok(restaurantsDots);
+            return Ok(result);
         }
         return NotFound("No found products");
     }

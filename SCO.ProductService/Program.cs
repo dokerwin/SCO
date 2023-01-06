@@ -20,21 +20,8 @@ builder.Services.AddSwaggerGen();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-
-
 var section = builder.Configuration.GetSection("RebitServer");
 builder.Services.AddLogging();
-
-//ConfigureServicesMassTransit.ConfigureServices(builder.Services, builder.Configuration,
-//    new MassTransitConfiguration()
-//    {
-//        IsDebug = false, //section.GetValue<bool>("IsDebug"),
-//        ServiceName = "Product",
-//    }
-//);
-
-
-
 var rabbitSection = builder.Configuration.GetSection("RabitServer");
 var url = rabbitSection.GetValue<string>("Url");
 var host = rabbitSection.GetValue<string>("Host");

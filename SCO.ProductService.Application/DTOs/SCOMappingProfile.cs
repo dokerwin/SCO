@@ -8,11 +8,16 @@ public  class SCOMappingProfile : Profile
 {
     public  SCOMappingProfile()
     {
+        
         CreateMap<ProductDto, Product>();
 
         CreateMap<Product, ItemDto>()
                 .ForMember(m => m.Name, c => c.MapFrom(s => s.ShortName))
                 .ForMember(m => m.Price, c => c.MapFrom(s => s.Price))
                 .ForMember(m => m.Description, c => c.MapFrom(s => s.Name));
+
+        CreateMap<Product, ProductDto>()
+               .ForMember(m => m.VatId, c => c.MapFrom(s => s.VatId))
+               .ForMember(m => m.CategoryId, c => c.MapFrom(s => s.CategoryId));
     }
 }

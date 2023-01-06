@@ -9,11 +9,10 @@ namespace SCO.ProductService.Application.DTOs.Read.ProductDTOs;
 
 public class ProductDto
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Barcode { get; set; }
     public string ShortName { get; set; }
     public decimal Price { get; set; }
-    public Guid TaxId { get; set; }
-    public VatDto? Vat { get; set; }
-    public CategoryDto? Category { get; set; }
+    public Guid VatId { get; set; }
+    public Guid CategoryId { get; set; }
 }
