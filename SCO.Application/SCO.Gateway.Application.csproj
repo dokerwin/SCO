@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SCO.Contracts\SCO.Contracts.csproj" />
-    <ProjectReference Include="..\SCO.Domain\SCO.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,10 +14,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
     <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="MassTransit\" />
   </ItemGroup>
 
   <PropertyGroup>
