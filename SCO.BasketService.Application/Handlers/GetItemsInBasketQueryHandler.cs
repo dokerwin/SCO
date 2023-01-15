@@ -20,9 +20,9 @@ public class GetItemsInBasketQueryHandler : IRequestHandler<GetItemsInBasketQuer
 
     public Task<ItemsInBasketResponse> Handle(GetItemsInBasketQuery request, CancellationToken cancellationToken)
     {
-        var items = _basketLogic.GetActualOrder();
+        var order = _basketLogic.GetActualOrder();
 
-        var itemsDto = _mapper.Map<IEnumerable<ItemDto>>(items);
+        var itemsDto = _mapper.Map<IEnumerable<ItemDto>>(order.Items);
 
         return Task.FromResult(new ItemsInBasketResponse() { Items = itemsDto });
     }

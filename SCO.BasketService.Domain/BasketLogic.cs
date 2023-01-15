@@ -13,6 +13,7 @@ public class BasketLogic : IBasketLogic
     public void AbortOrder()
     {
         _order.OrderStatus = (int)Enums.OrderStatus.Closed;
+        _order = new Order();
     }
 
     public void AddItemToBasket(Item item)
@@ -23,6 +24,7 @@ public class BasketLogic : IBasketLogic
     public void CloseOrder()
     {
         _order.OrderStatus = (int)Enums.OrderStatus.Closed;
+        _order = new Order();
     }
 
     public Order GetActualOrder()
@@ -37,6 +39,7 @@ public class BasketLogic : IBasketLogic
 
     public void OpenOrder()
     {
+        _order = new Order();
         _order.OrderStatus = (int)Enums.OrderStatus.Open;
     }
 

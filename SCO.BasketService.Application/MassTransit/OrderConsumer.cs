@@ -6,7 +6,7 @@ using SCO.Contracts.DTOs;
 
 namespace SCO.BasketService.Application.MassTransit;
 
-public class OrderConsumer : IConsumer<OrderRequest>
+public class OrderConsumer : IConsumer<BasketRequest>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ public class OrderConsumer : IConsumer<OrderRequest>
     /// </summary>
     /// <param name="context"></param>
     /// <returns></returns>
-    public async Task Consume(ConsumeContext<OrderRequest> context)
+    public async Task Consume(ConsumeContext<BasketRequest> context)
     {
         try 
         {

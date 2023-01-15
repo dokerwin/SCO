@@ -43,6 +43,23 @@ public class BasketController : ControllerBase
         await _mediator.Send(new AddProductToBasketCommand(productId));
     }
 
+    [HttpPost("OpenOrder")]
+    public async void OpenOrder()
+    {
+        await _mediator.Send(new OpenOrderCommand());
+    }
+
+    [HttpPost("AbortOrder")]
+    public async void AbortOrder()
+    {
+        await _mediator.Send(new AbortOrderCommand());
+    }
+
+    [HttpPost("FinishOrder")]
+    public async void FinishOrder()
+    {
+        await _mediator.Send(new FinishOrderCommand());
+    }
 
     [HttpDelete]
     public async void DeleteProductFromBasket([FromBody] Guid productId)
