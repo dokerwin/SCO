@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "SCO.APIGetaway": {
+    "SCO.Gateway.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
