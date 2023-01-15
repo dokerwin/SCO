@@ -2,4 +2,4 @@
 
 namespace SCO.Contracts.Requests.Payment;
 
-public record PaymentRequest (Guid OrderId, IEnumerable<ItemDto> Items);
+public record PaymentRequest (Guid OrderId);

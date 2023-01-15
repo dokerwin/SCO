@@ -6,4 +6,4 @@ using System.Threading.Tasks;
 
 namespace SCO.Contracts.Requests.Order;
 
-public record OrderRequest (Guid BasketId);
+public record BasketRequest (Guid BasketId);
