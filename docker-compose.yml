@@ -1,21 +1,6 @@
 version: '3.4'
 
 services:
-  
-  rabbitmq3:
-        container_name: "rabbitmq"
-        image: rabbitmq:3.8-management-alpine
-        ports:
-            # AMQP protocol port
-            - '5672:5672'
-            # HTTP management UI
-            - '15672:15672'
-        networks:
-           - mynet
-        volumes:
-           - ./data:/var/lib/rabbitmq:rw
-           - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
-           - ./rabbitmq/definitions.json:/opt/definitions.json:ro
 
   jenkins:
         image: jenkins/jenkins:lts
@@ -29,51 +14,66 @@ services:
           - ~/jenkins_home:/var/jenkins_home
           - /var/run/docker.sock:/var/run/docker.sock
           - /usr/local/bin/docker:/usr/local/bin/docker
-
-  sco.api:
-    image: ${DOCKER_REGISTRY-}scoapi
-    networks:
-       - mynet
+  
+  rabbitmq3:
+        container_name: "rabbitmq"
+        image: rabbitmq:3.8-management-alpine
+        ports:
+            # AMQP protocol port
+            - '5672:5672'
+            # HTTP management UI
+            - '15672:15672'
+        volumes:
+           - ./data:/var/lib/rabbitmq:rw
+           - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
+           - ./rabbitmq/definitions.json:/opt/definitions.json:ro        
+  
+  sco.gateway.api:
+    image: ${DOCKER_REGISTRY-}scogatewayapi
     build:
       context: .
-      dockerfile: SCO.Api/Dockerfile
-
+      dockerfile: SCO.Gateway.Api/Dockerfile
     depends_on:
-      - "rabbitmq3"
-      links:
-      - "rabbitmq3"
-
-  sco.paymentservice.api:
-    image: ${DOCKER_REGISTRY-}scopaymentserviceapi
-    build:
-      context: .
-      dockerfile: SCO.PaymentService.Api/Dockerfile
-    depends_on:
-      - "rabbitmq3"
-    links:
-      - "rabbitmq3"
-
+        - rabbitmq3
+        - sco.basketservice.api
+        - sco.productservice.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:80
+    ports:
+      - "5292:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 
   sco.basketservice.api:
     image: ${DOCKER_REGISTRY-}scobasketserviceapi
     build:
       context: .
       dockerfile: SCO.BasketService.Api/Dockerfile
-    links:
-      - "rabbitmq3"
     depends_on:
-      - "rabbitmq3"
+       - rabbitmq3
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:80
+    ports:
+      - "7118:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 
-  sco.productservice:
-    image: ${DOCKER_REGISTRY-}scoproductservice
+
+  sco.productservice.api:
+    image: ${DOCKER_REGISTRY-}scoproductserviceapi
     build:
       context: .
-      dockerfile: SCO.ProductService/Dockerfile
+      dockerfile: SCO.ProductService.Api/Dockerfile
     depends_on:
-      - "rabbitmq3"
-
-networks:
-  mynet:
-    driver: bridge
-    name: mynet
-  
+       - rabbitmq3
+       
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:80
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
