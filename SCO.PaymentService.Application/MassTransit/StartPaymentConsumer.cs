@@ -30,8 +30,7 @@ public class StartPaymentConsumer : IConsumer<PaymentRequest>
     /// <exception cref="NotImplementedException"></exception>
     public async Task Consume(ConsumeContext<PaymentRequest> context)
     {
-
-        var result = await _mediator.Send(new StartPaymentCommand(context.Message.OrderId, context.Message.Items));
+        var result = await _mediator.Send(new StartPaymentCommand(context.Message.OrderId));
         await context.RespondAsync(result);
     }
 }

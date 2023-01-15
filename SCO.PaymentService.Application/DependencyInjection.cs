@@ -4,6 +4,7 @@ using SCO.PaymentService.Domain;
 using System.Reflection;
 using MassTransit;
 using SCO.PaymentService.Application.MassTransit;
+using MediatR;
 
 namespace SCO.PaymentService.Application;
 public static class DependencyInjection
@@ -22,8 +23,8 @@ public static class DependencyInjection
             {
                 c.Host($"rabbitmq://{url}/{host}", configurator =>
                 {
-                    configurator.Username("myuser");
-                    configurator.Password("mypassword");
+                    configurator.Username("guest");
+                    configurator.Password("guest");
                 });
                 c.ConfigureEndpoints(context, SnakeCaseEndpointNameFormatter.Instance);
             }));
@@ -37,7 +38,7 @@ public static class DependencyInjection
         services.AddMassTransit(Configuration);
         services.AddScoped<IPaymentLogic, PaymentLogic>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+        services.AddMediatR(Assembly.GetExecutingAssembly());
         return services;
     }
 }

@@ -6,6 +6,7 @@ public  class SCOMappingProfile : Profile
 {
     public  SCOMappingProfile()
     {
-        CreateMap<Payment, PaymentDto>();
-    }
+        CreateMap<Payment, PaymentDto>()
+            .ForMember(s => s.MopId, c => c.MapFrom(f => f.MethodOfPayment.Id)).ReverseMap();
+    }   
 }

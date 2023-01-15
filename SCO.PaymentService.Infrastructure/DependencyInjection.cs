@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SCO.PaymentService.Application.Common.Interfaces.Persistance;
+using SCO.PaymentService.Infrastructure.Persistence;
 using SCO.PaymentService.Infrastructure.Persitence;
 
 namespace SCO.PaymentService.Infrastructure;
@@ -16,6 +17,7 @@ public static class DependencyInjection
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IPaymentRepository, PaymentRepository>();
+        services.AddScoped<IMethodOfPaymentRepository, MethodOfPaymentRepository>();
 
         return services;
     }

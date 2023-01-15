@@ -4,5 +4,5 @@ using SCO.PaymentService.Application.DTOs;
 
 namespace SCO.PaymentService.Application.Commands;
 
-public record StartPaymentCommand(Guid OrderID) : IRequest<PaymentResultDto>;
+public record AbortPaymentCommand(Guid OrderID) : IRequest<PaymentResultDto>;
 

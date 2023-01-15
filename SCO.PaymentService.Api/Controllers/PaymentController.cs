@@ -27,10 +27,17 @@ public class PaymentController : ControllerBase
     }
 
     [HttpPost]
-    [AllowAnonymous]
-    public async Task<Guid> CreatePayment([FromBody] Guid id, [FromBody] IEnumerable<ItemDto> ItemsDto)
+    public async Task<Guid> CreatePayment([FromBody] Guid id)
     {
-        var result = await _mediator.Send(new StartPaymentCommand(id,ItemsDto));
+        var result = await _mediator.Send(new StartPaymentCommand(id));
+        return result.PaymentId;
+    }
+
+
+    [HttpPost]
+    public async Task<Guid> AbortPayment([FromBody] Guid id, [FromBody] IEnumerable<ItemDto> ItemsDto)
+    {
+        var result = await _mediator.Send(new AbortPaymentCommand(id));
         return result.PaymentId;
     }
 }
