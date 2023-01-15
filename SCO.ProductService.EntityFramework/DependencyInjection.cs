@@ -10,7 +10,7 @@ public static class DependencyInjection
     public static IServiceCollection AddEntityFramework(this IServiceCollection services, IConfiguration Configuration)
     {
         services.AddDbContext<SCOProductContext>(
-            optionsAction => optionsAction.UseSqlServer(Configuration.GetConnectionString("SCO_ProductService_ConnectionString")));
+            optionsAction => optionsAction.UseSqlite(Configuration.GetConnectionString("SCO_ProductService_ConnectionString")));
         return services;
     }
 }

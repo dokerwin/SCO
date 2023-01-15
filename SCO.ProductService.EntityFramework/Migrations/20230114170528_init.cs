@@ -15,8 +15,8 @@ namespace SCO.ProductService.EntityFramework.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,8 +27,8 @@ namespace SCO.ProductService.EntityFramework.Migrations
                 name: "ProductOwners",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,8 +39,8 @@ namespace SCO.ProductService.EntityFramework.Migrations
                 name: "ProductTypes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TypeName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    TypeName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,9 +51,9 @@ namespace SCO.ProductService.EntityFramework.Migrations
                 name: "Vats",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Percent = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Percent = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,15 +64,15 @@ namespace SCO.ProductService.EntityFramework.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Barcode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ShortName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    ProductTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    VatId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductOwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Barcode = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    ShortName = table.Column<string>(type: "TEXT", nullable: false),
+                    Price = table.Column<double>(type: "REAL", nullable: false),
+                    ProductTypeId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    VatId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ProductOwnerId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

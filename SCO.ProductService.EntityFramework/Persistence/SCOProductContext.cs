@@ -25,7 +25,7 @@ public class SCOProductContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("SCO_ProductService_ConnectionString"));
+        optionsBuilder.UseSqlite(_configuration.GetConnectionString("SCO_ProductService_ConnectionString"));
     }
 }
 
