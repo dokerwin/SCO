@@ -16,11 +16,11 @@ public class BasketController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ItemDto>>> GetAllProductsAsync()
+    public async Task<ActionResult<IEnumerable<ProductDto>>> GetAllProductsAsync()
     {
         ActionResult returnResult = NotFound();
 
-        var items = await _mediator.Send(new GetItemsInBasketQuery());
+        var items = await _mediator.Send(new GetBasketDetailsQuery());
 
         if (items is not null)
         {

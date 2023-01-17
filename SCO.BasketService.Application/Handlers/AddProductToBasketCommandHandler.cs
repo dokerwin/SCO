@@ -39,7 +39,7 @@ public class AddProductToBasketCommandHandler : AsyncRequestHandler<AddProductTo
             var itemsInOrder = await _productClient.GetResponse<ProductsResponse>(
                  new ProductsRequest() { Id = request.ProductID});
 
-            var item = _mapper.Map<IEnumerable<Item>>(itemsInOrder.Message.Items);
+            var item = _mapper.Map<IEnumerable<Item>>(itemsInOrder.Message.Products);
             if (item != null)
             {
                 _basketLogic.AddItemToBasket(item.First());

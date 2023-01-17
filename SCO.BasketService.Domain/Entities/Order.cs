@@ -27,7 +27,7 @@ public class Order : EntityBase<Guid>
         _items.RemoveAll(s=>s.Id == itemId);
     }
 
-
+    public DateTime OrderedOn { get; internal set; }
     public Guid PaymentId { get; internal set; }
     public int OrderStatus { get; set; }
 }

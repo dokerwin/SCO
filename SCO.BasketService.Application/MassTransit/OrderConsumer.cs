@@ -28,7 +28,7 @@ public class OrderConsumer : IConsumer<BasketRequest>
         {
             var orderId = context.Message.BasketId;
             var orders = await _unitOfWork.Orders.Find(x => x.Id == orderId);
-            var orderDtos = _mapper.Map<IEnumerable<ItemDto>>(orders);
+            var orderDtos = _mapper.Map<IEnumerable<ProductDto>>(orders);
             await context.RespondAsync(orderDtos);
         }
         catch (Exception ex)
