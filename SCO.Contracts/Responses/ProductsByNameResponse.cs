@@ -4,5 +4,5 @@ namespace SCO.Contracts.Responses;
 
 public class ProductsResponse
 {
-    public IEnumerable<ItemDto> Items { get; set; }
+    public IEnumerable<ProductDto> Products { get; set; }
 }

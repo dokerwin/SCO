@@ -4,5 +4,5 @@ namespace SCO.Contracts.Requests.Order;
 
 public class AddItemOrderRequest
 {
-    public ItemDto Item { get; set; }
+    public ProductDto Product { get; set; }
 }
