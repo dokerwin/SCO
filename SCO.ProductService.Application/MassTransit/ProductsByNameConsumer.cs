@@ -32,9 +32,9 @@ public class ProductsByNameConsumer : IConsumer<ProductsByNameRequest>
             
             var products = await _unitOfWork.Products.Find(x => x.Name == context.Message.ProductName);
 
-            var productDtos = _mapper.Map<IEnumerable<ItemDto>>(products);
+            var productDtos = _mapper.Map<IEnumerable<ProductDto>>(products);
 
-            await context.RespondAsync(new ProductsResponse() { Items = productDtos });
+            await context.RespondAsync(new ProductsResponse() { Products = productDtos });
         }
         catch (Exception ex)
         {

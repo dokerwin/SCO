@@ -34,8 +34,8 @@ public class ProductsByCategoryConsumer : IConsumer<ProductsByCategoryRequest>
             if (categories != null)
             {
                 var products = await _unitOfWork.Products.Find(x => x.CategoryId == categories.First().Id);
-                var orderDtos = _mapper.Map<IEnumerable<Product>, IEnumerable<ItemDto>>(products);
-                await context.RespondAsync(new ProductsResponse() { Items = orderDtos });
+                var orderDtos = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductDto>>(products);
+                await context.RespondAsync(new ProductsResponse() { Products = orderDtos });
             }
             await context.RespondAsync(new ProductsResponse() { });
         }

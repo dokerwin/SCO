@@ -32,9 +32,9 @@ public class ProductsConsumer : IConsumer<ProductsRequest>
 
             var products = await _unitOfWork.Products.Find(x => x.Id == context.Message.Id);
 
-            var orderDtos = _mapper.Map<IEnumerable<Product>, IEnumerable<ItemDto>>(products);
+            var orderDtos = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductDto>>(products);
 
-            await context.RespondAsync(new ProductsResponse() { Items = orderDtos });
+            await context.RespondAsync(new ProductsResponse() { Products = orderDtos });
         }
         catch (Exception ex)
         {
