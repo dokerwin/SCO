@@ -1,5 +1,9 @@
 version: '3.4'
 
+networks:
+  backend:
+  frontend:    
+
 services:
 
   jenkins:
@@ -37,43 +41,34 @@ services:
         - rabbitmq3
         - sco.basketservice.api
         - sco.productservice.api
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:80
     ports:
-      - "5292:80"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-
+      - 8001:80
+    networks:
+      - backend
+      - frontend
+  
   sco.basketservice.api:
     image: ${DOCKER_REGISTRY-}scobasketserviceapi
     build:
       context: .
       dockerfile: SCO.BasketService.Api/Dockerfile
-    depends_on:
-       - rabbitmq3
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:80
-    ports:
-      - "7118:80"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-
+    networks:
+      - backend  
 
   sco.productservice.api:
     image: ${DOCKER_REGISTRY-}scoproductserviceapi
     build:
       context: .
       dockerfile: SCO.ProductService.Api/Dockerfile
-    depends_on:
-       - rabbitmq3
-       
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:80
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    networks:
+      - backend
+
+  sco.web.ui:
+    image: ${DOCKER_REGISTRY-}scowebui
+    build:
+      context: .
+      dockerfile: SCO.Web.UI/Dockerfile
+    ports:
+      - 8002:80
+    networks:
+      - frontend
