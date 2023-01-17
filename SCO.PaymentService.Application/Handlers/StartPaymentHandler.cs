@@ -29,10 +29,10 @@ public class StartPaymentHandler : IRequestHandler<StartPaymentCommand, PaymentR
     public async Task<PaymentResultDto> Handle(StartPaymentCommand request, CancellationToken cancellationToken)
     {
         var _productClient = busControl.CreateRequestClient<BasketRequest>(TimeSpan.FromSeconds(180));
-        var itemsInOrder = await _productClient.GetResponse<ItemsInBasketResponse>(
+        var itemsInOrder = await _productClient.GetResponse<BasketDetailsResponse>(
              new BasketRequest(request.OrderID));
 
-        var paymentAmount = await mediator.Send(new GetPaymentAmountQuery(itemsInOrder.Message.Items));
+        var paymentAmount = await mediator.Send(new GetPaymentAmountQuery(itemsInOrder.Message.BasketDetails.ItemDetails));
 
         var result = await paymentLogic.ProcessPayment(request.OrderID, paymentAmount.Amount);
 

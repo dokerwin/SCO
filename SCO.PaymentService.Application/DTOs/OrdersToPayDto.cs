@@ -2,5 +2,5 @@
 
 public class OrdersToPaytDto
 {
-    public IEnumerable<ItemDto> Items { get; set; }
+    public IEnumerable<ProductDto> Items { get; set; }
 }

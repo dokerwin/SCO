@@ -35,7 +35,7 @@ public class PaymentController : ControllerBase
 
 
     [HttpPost]
-    public async Task<Guid> AbortPayment([FromBody] Guid id, [FromBody] IEnumerable<ItemDto> ItemsDto)
+    public async Task<Guid> AbortPayment([FromBody] Guid id, [FromBody] IEnumerable<ProductDto> ItemsDto)
     {
         var result = await _mediator.Send(new AbortPaymentCommand(id));
         return result.PaymentId;

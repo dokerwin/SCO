@@ -8,8 +8,8 @@ public class GetPaymentAmountHandler : IRequestHandler<GetPaymentAmountQuery, Pa
 {
     public async Task<PaymentAmountDto> Handle(GetPaymentAmountQuery request, CancellationToken cancellationToken)
     {
-        double amount = request.Orders.Sum(s => s.Price);
+        decimal amount = request.Orders.Sum(s => s.UnitPrice);
 
-        return await Task.FromResult(new PaymentAmountDto() { Amount = amount });
+        return await Task.FromResult(new PaymentAmountDto() { Amount = (double)amount });
     }
 }
