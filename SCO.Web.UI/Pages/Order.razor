@@ -1,0 +1,61 @@
+﻿@page "/basket"
+@inject HttpClient httpClient
+@using SCO.Contracts.DTOs
+
+<h3>Basket</h3>
+
+
+<div class="row">
+    <div class="col-12 mt-4">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Code</td>
+                        <td>UnitPrice</td>
+                        <td>Price</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (basket is not null)
+                    {
+                        foreach (var item in basket.ItemDetails)
+                        {
+                            <OrderRecord Item="item"
+                                   DeleteProduct="DeleteProduct"></OrderRecord>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td class="text-center" colspan="5">No product records to display</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@code {
+    private BasketDto basket;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await FetchOrderList();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task FetchOrderList()
+    {
+        basket = await httpClient.GetFromJsonAsync<BasketDto>("api/basket");
+    }
+
+    private async Task DeleteOrder(Guid orderId)
+    {
+        await httpClient.DeleteAsync($"api/Basket/{orderId}");
+        await FetchOrderList();
+    }
+}
