@@ -5,6 +5,7 @@ using System.Reflection;
 using MassTransit;
 using SCO.PaymentService.Application.MassTransit;
 using MediatR;
+using SCO.PaymentService.Application.Configuration;
 
 namespace SCO.PaymentService.Application;
 public static class DependencyInjection
@@ -36,6 +37,7 @@ public static class DependencyInjection
     public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration Configuration)
     {
         services.AddMassTransit(Configuration);
+        services.AddSingleton<PaymentConfiguration>();
         services.AddScoped<IPaymentLogic, PaymentLogic>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());

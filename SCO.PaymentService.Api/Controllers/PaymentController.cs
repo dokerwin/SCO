@@ -8,7 +8,7 @@ using SCO.PaymentService.Application.Queries;
 
 namespace SCO.PaymentService.Conrollers;
 [ApiController]
-[Route("payment")]
+[Route("api/[controller]")]
 public class PaymentController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -34,8 +34,8 @@ public class PaymentController : ControllerBase
     }
 
 
-    [HttpPost]
-    public async Task<Guid> AbortPayment([FromBody] Guid id, [FromBody] IEnumerable<ProductDto> ItemsDto)
+    [HttpPost("AbortPayment")]
+    public async Task<Guid> AbortPayment([FromBody] Guid id)
     {
         var result = await _mediator.Send(new AbortPaymentCommand(id));
         return result.PaymentId;

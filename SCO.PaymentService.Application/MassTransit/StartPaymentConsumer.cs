@@ -2,7 +2,6 @@
 using MassTransit;
 using MediatR;
 using SCO.Contracts.Requests.Payment;
-using SCO.Contracts.Responses;
 using SCO.PaymentService.Application.Commands;
 using SCO.PaymentService.Application.Common.Interfaces.Persistance;
 
@@ -21,13 +20,6 @@ public class StartPaymentConsumer : IConsumer<PaymentRequest>
         _mediator = mediator;
     }
 
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="context"></param>
-    /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
     public async Task Consume(ConsumeContext<PaymentRequest> context)
     {
         var result = await _mediator.Send(new StartPaymentCommand(context.Message.OrderId));

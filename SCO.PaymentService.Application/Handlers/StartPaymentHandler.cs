@@ -34,9 +34,16 @@ public class StartPaymentHandler : IRequestHandler<StartPaymentCommand, PaymentR
 
         var paymentAmount = await mediator.Send(new GetPaymentAmountQuery(itemsInOrder.Message.BasketDetails.ItemDetails));
 
-        var result = await paymentLogic.ProcessPayment(request.OrderID, paymentAmount.Amount);
+        if(paymentAmount != null)
+        {
+            var result = await paymentLogic.ProcessPayment(request.OrderID, (decimal)paymentAmount.Amount);
+        }
+        else
+        {
+            var result = await paymentLogic.ProcessPayment(request.OrderID,233);
+        }
 
-        if (result is not null) { }
+   
 
         return await Task.FromResult(new PaymentResultDto());
     }
