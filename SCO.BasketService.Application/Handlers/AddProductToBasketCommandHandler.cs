@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using SCO.BasketService.Application.Commands;
 using SCO.BasketService.Domain;
 using SCO.BasketService.Domain.Entities;
-using SCO.Contracts.Requests.Order;
 using SCO.Contracts.Requests.Product;
 using SCO.Contracts.Responses;
 

@@ -1,7 +1,5 @@
-﻿using MassTransit;
-using MediatR;
+﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using SCO.BasketService.Application.Queries;
 using SCO.BasketService.Domain;
 using System.Reflection;
 
