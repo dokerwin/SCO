@@ -3,10 +3,10 @@
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamPathTemplate": "/api/product",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/product",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.productservice.api",
@@ -15,10 +15,10 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/product/{id}",
+      "UpstreamPathTemplate": "/api/product/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       "DownstreamPathTemplate": "/api/product/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.productservice.api",
@@ -27,10 +27,10 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamPathTemplate": "/api/product",
       "UpstreamHttpMethod": [ "Post", "Put" ],
       "DownstreamPathTemplate": "/api/product",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.productservice.api",
@@ -39,10 +39,10 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/basket",
+      "UpstreamPathTemplate": "/api/basket",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/basket",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.basketservice.api",
@@ -54,7 +54,7 @@
       "UpstreamPathTemplate": "/gateway/basket/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       "DownstreamPathTemplate": "/api/basket/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.basketservice.api",
@@ -63,10 +63,10 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/basket",
+      "UpstreamPathTemplate": "/api/basket",
       "UpstreamHttpMethod": [ "Post", "Put" ],
       "DownstreamPathTemplate": "/api/basket",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.basketservice.api",
