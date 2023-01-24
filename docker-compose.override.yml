@@ -25,3 +25,15 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
+
+  sco.configurationservice.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+   
+  sco.paymentservice.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

@@ -5,7 +5,6 @@ networks:
   frontend:    
 
 services:
-
   jenkins:
         image: jenkins/jenkins:lts
         privileged: true
@@ -31,7 +30,8 @@ services:
            - ./data:/var/lib/rabbitmq:rw
            - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
            - ./rabbitmq/definitions.json:/opt/definitions.json:ro        
-  
+        networks:
+            - backend 
   sco.gateway.api:
     image: ${DOCKER_REGISTRY-}scogatewayapi
     build:
@@ -53,7 +53,9 @@ services:
       context: .
       dockerfile: SCO.BasketService.Api/Dockerfile
     networks:
-      - backend  
+      - backend 
+    depends_on:
+        - rabbitmq3  
 
   sco.productservice.api:
     image: ${DOCKER_REGISTRY-}scoproductserviceapi
@@ -62,6 +64,8 @@ services:
       dockerfile: SCO.ProductService.Api/Dockerfile
     networks:
       - backend
+    depends_on:
+        - rabbitmq3
 
   sco.web.ui:
     image: ${DOCKER_REGISTRY-}scowebui
@@ -72,3 +76,23 @@ services:
       - 8002:80
     networks:
       - frontend
+
+  sco.configurationservice.api:
+    image: ${DOCKER_REGISTRY-}scoconfigurationserviceapi
+    build:
+      context: .
+      dockerfile: SCO.ConfigurationService.Api/Dockerfile
+    depends_on:
+        - rabbitmq3
+    networks:
+      - backend
+
+  sco.paymentservice.api:
+    image: ${DOCKER_REGISTRY-}scopaymentserviceapi
+    build:
+      context: .
+      dockerfile: SCO.PaymentService.Api/Dockerfile
+    depends_on:
+        - rabbitmq3
+    networks:
+      - backend
