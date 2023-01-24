@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SCO.ProductService.Domain.Entities.Base;
+﻿using SCO.ProductService.Domain.Entities.Base;
 
 namespace SCO.ProductService.Domain.Entities;
 
