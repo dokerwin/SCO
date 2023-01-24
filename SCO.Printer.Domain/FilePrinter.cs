@@ -1,4 +1,4 @@
-﻿using SCO.PrinterService.Domain;
+﻿  using SCO.PrinterService.Domain;
 using SCO.PrinterService.Domain.Entities.Ticket;
 
 namespace SCO.PrinterService.Domain;
