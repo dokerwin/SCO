@@ -10,12 +10,11 @@ using SCO.Identity.Application.Authentication.Commands.Login;
 using SCO.Identity.Application.Authentication.Commands.Logout;
 using SCO.Identity.Application.Authentication.Commands.RefreshToken;
 using SCO.Identity.Application.Authentication.Commands.Register;
-using System;
 using System.Security.Claims;
-
 namespace SCO.Identity.Api.Conrollers;
+
 [ApiController]
-[Route("auth")]
+[Route("api/[controller]")]
 public class AuthenticationController : ControllerBase
 {
     private readonly IMediator _mediatr;
@@ -25,7 +24,6 @@ public class AuthenticationController : ControllerBase
         _mediatr = mediatr;
         _validator = validator;
     }
-
 
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest registerRequest)

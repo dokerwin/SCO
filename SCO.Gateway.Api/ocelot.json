@@ -73,6 +73,18 @@
           "Port": 80
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "DownstreamPathTemplate": "/api/Authentication",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.basketservice.api",
+          "Port": 80
+        }
+      ]
     }
   ]
 }

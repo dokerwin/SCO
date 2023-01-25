@@ -27,7 +27,7 @@ public class SCOIndentityContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("SCOConnectionString"));
+        optionsBuilder.UseSqlite(_configuration.GetConnectionString("SCOConnectionString"));
     }
 }
 

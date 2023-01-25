@@ -21,7 +21,5 @@ public class RegisterRequest
     public string ConfirmPassword { get; set; }
 
     [Required]
-    public DateTime? DateOfBirth { get; set; }
-    [Required]
     public Guid RoleId { get; set; }
 }

@@ -21,8 +21,7 @@ public class AccessTokenGenerator
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, $"{ user.Firstname }{user.LastName}"),
-                //new Claim(ClaimTypes.Role, $"{ user.Role.Name}"),
-                new Claim("DateOfBirth", user.DateOfBirth.Value.ToString("yyyy-MM-dd")),
+                new Claim(ClaimTypes.Role, $"{ user.Role.Name}")
             };
 
         DateTime expirationTime = DateTime.UtcNow.AddMinutes(_configuration.AccessTokenExpirationMinutes);

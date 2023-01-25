@@ -94,6 +94,19 @@ services:
       dockerfile: SCO.PaymentService.Api/Dockerfile
     depends_on:
         - rabbitmq3
+    networks:
+      - backend
+
+  sco.identity.api:
+    image: ${DOCKER_REGISTRY-}scoidentityapi
+    build:
+      context: .
+      dockerfile: SCO.Identity/Dockerfile
+    depends_on:
+        - rabbitmq3
+    networks:
+      - backend
+
   sco.shiftservice.api:
     image: ${DOCKER_REGISTRY-}scoshiftserviceapi
     build:
