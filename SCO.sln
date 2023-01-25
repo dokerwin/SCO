@@ -65,7 +65,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCO.PaymentService.EntityFr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShiftService", "ShiftService", "{F9E254EF-22B8-43F7-B8E1-1F85F4C95239}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCO.ShiftService", "SCO.ShiftService\SCO.ShiftService.csproj", "{25D2E7C5-009D-4519-9B3D-C8BEB9572954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCO.ShiftService.Api", "SCO.ShiftService\SCO.ShiftService.Api.csproj", "{25D2E7C5-009D-4519-9B3D-C8BEB9572954}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCO.ShiftService.Application", "SCO.ShiftService.Application\SCO.ShiftService.Application.csproj", "{9AD58CFF-DB1D-4F84-8E25-3ACD1CB03D88}"
 EndProject
@@ -90,6 +90,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCO.ConfigurationService.Domain", "SCO.ConfigurationService.Domain\SCO.ConfigurationService.Domain.csproj", "{04A4D148-4D25-4F2B-AA36-CE29B0758920}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCO.ConfigurationService.Api", "SCO.ConfigurationService.Api\SCO.ConfigurationService.Api.csproj", "{09F6EE7A-A180-4FA1-A52C-51F50E757328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCO.ShiftService.Domain", "SCO.ShiftService.Domain\SCO.ShiftService.Domain.csproj", "{350CF77B-DE83-42D8-94F0-8AF72E90AEFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCO.ShiftService.Infrastructure", "SCO.ShiftService.Infrastructure\SCO.ShiftService.Infrastructure.csproj", "{2B646D95-2E18-4FBD-9654-BC69B0A7C07E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCO.ShiftService.EntityFramework", "SCO.ShiftService.EntityFramework\SCO.ShiftService.EntityFramework.csproj", "{CD42F4E5-C50B-4F33-A6EA-04B898489268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

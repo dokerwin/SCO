@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SCO.Contracts.Requests.Identity;
+using SCO.ShiftService.Application.DTOs;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,35 +11,24 @@ namespace SCO.ShiftService.Controllers
     public class ShiftController : ControllerBase
     {
         // GET: api/<ShiftController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("GetShiftInfo")]
+        public ShiftInfoDto Get()
         {
-            return new string[] { "value1", "value2" };
+            return new ShiftInfoDto();
         }
-
-        // GET api/<ShiftController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+       
+        // POST api/<ShiftController>
+        [HttpPost("StartShift")]
+        public void StartShift([FromBody] LoginRequest login)
         {
-            return "value";
+
         }
 
         // POST api/<ShiftController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("EndShift")]
+        public void EndShift([FromBody] LoginRequest login)
         {
-        }
 
-        // PUT api/<ShiftController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ShiftController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
