@@ -38,24 +38,7 @@ public class CashierRepository : Repository<Cashier>, ICashierRepository
         }
     }
 
-    public async Task <Cashier> GetActualCashier()
-    {
-        try
-        {
-            var actualShift = await _dbSet.LastOrDefaultAsync();
-            if (actualShift is not null)
-                return actualShift;
-
-            return new Cashier();
-
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "{Repo} Upsert function error", typeof(CashierRepository));
-            return new Cashier();
-        }
-    }
-
+   
     public async Task<Cashier> FindByEmailAsync(string email)
     {
         try

@@ -1,8 +1,10 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Configuration;
 using SCO.Identity.Aplications.Validators;
 using SCO.Identity.Application;
 using SCO.Identity.EntityFramework;
+using SCO.Identity.EntityFramework.Seed;
 using SCO.Identity.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,13 +16,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 builder.Services.AddAplication(builder.Configuration);
 builder.Services.AddEntityFramework(builder.Configuration);
+builder.Services.AddMassTransit(builder.Configuration);
 builder.Services.AddInfrastructure();
 builder.Services.AddControllers();
 builder.Services.AddLogging();
-
 builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 
 builder.Services.AddValidatorsFromAssemblyContaining<RegisterRequstValidator>();
@@ -32,6 +33,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseItToSeedDB();
 }
 
 app.UseHttpsRedirection();

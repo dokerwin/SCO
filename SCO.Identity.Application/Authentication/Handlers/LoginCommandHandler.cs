@@ -8,6 +8,7 @@ using SCO.Identity.Application.Authentication.Commands.Login;
 using SCO.Identity.Application.Authentication.Commands.Register;
 using SCO.Identity.Application.Common.Interfaces.Persistance;
 using SCO.Identity.Application.Exceptions;
+using SCO.Identity.Domain;
 using SCO.Identity.Domain.Entities.Employees;
 
 namespace SCO.Identity.Application.Authentication.Handlers;
@@ -30,11 +31,13 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthenticatedUs
     {
   
         var user = await unitOfWork.Cashiers.FindByEmailAsync(login.LoginRequest.Email);
+       
         if (user is null)
         {
             throw new BadRequestException("Invalid user name or password");
         }
 
+        user.Role = await unitOfWork.Roles.GetById(user.RoleId);
         var result = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, login.LoginRequest.Password);
         if (result == PasswordVerificationResult.Failed)
         {
@@ -42,6 +45,16 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthenticatedUs
         }
 
         AuthenticatedUserResponse response = await authenticator.Authenticate(user);
+
+
+        await unitOfWork.RefreshTokens.Add(new RefreshToken()
+        {
+            Id = Guid.NewGuid(),
+            Token = response.AccessToken,
+            UserId = user.Id,
+        });
+
+        await unitOfWork.CompleteAsync();
 
         return await Task.FromResult(response);
     }

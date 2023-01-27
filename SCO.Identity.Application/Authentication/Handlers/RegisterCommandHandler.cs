@@ -22,13 +22,20 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterR
     }
     public async Task<RegisterResponse> Handle(RegisterCommand register, CancellationToken cancellationToken)
     {
-        var registrationCashier = mapper.Map<Cashier>(register.RegisterRequest);
+        try
+        {
+            var registrationCashier = mapper.Map<Cashier>(register.RegisterRequest);
 
-        registrationCashier.PasswordHash = passwordHasher.HashPassword(registrationCashier, register.RegisterRequest.Password);
-        registrationCashier.Id = Guid.NewGuid();
-        await unitOfWork.Cashiers.Add(registrationCashier);
-        await unitOfWork.CompleteAsync();
-
-        return await Task.FromResult(new RegisterResponse());
+            registrationCashier.PasswordHash = passwordHasher.HashPassword(registrationCashier, register.RegisterRequest.Password);
+            registrationCashier.Id = Guid.NewGuid();
+            await unitOfWork.Cashiers.Add(registrationCashier);
+            await unitOfWork.CompleteAsync();
+            return await Task.FromResult(new RegisterResponse(true));
+        }
+        catch(Exception ex)
+        {
+            return await Task.FromResult(new RegisterResponse(false));
+        }
+        
     }
 }

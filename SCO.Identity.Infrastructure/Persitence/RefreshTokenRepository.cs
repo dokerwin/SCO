@@ -10,23 +10,51 @@ public class RefreshTokenRepository : Repository<RefreshToken>, IRefreshTokenRep
 {
     public RefreshTokenRepository(SCOIndentityContext context, ILogger<RefreshTokenRepository> logger) : base(context, logger) { }
 
-    public Task Create(RefreshToken refreshToken)
+    public async Task<bool> DeleteAll(Guid userId)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var exist = await _dbSet.Where(x => x.UserId == userId)
+                                    .FirstOrDefaultAsync();
+
+            if (exist == null) return false;
+
+            _dbSet.Remove(exist);
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "{Repo} Delete function error", typeof(IRepository<RefreshTokenRepository>));
+            return false;
+        }
     }
 
-    public Task DeleteAll(Guid userId)
+    public async Task<RefreshToken> GetByToken(string token)
     {
-        throw new NotImplementedException();
+        try
+        {
+            return await _dbSet.Where(t => t.Token == token).FirstOrDefaultAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "{Repo} GetByToken function error", typeof(IRepository<RefreshTokenRepository>));
+            return  new RefreshToken();
+        }
+        
     }
 
-    public Task<RefreshToken> GetByToken(string token)
+    public async Task<RefreshToken> Last()
     {
-        throw new NotImplementedException();
+        try
+        {
+            return await _dbSet.Where(t => t.Id != Guid.Empty).FirstOrDefaultAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "{Repo} Last function error", typeof(IRepository<RefreshTokenRepository>));
+            return new RefreshToken();
+        }
     }
 
-    Task IRefreshTokenRepository.Delete(Guid id)
-    {
-        throw new NotImplementedException();
-    }
 }

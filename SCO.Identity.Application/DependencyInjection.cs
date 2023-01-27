@@ -11,12 +11,36 @@ using SCO.Identity.Application.Authentication.Models;
 using SCO.Identity.Domain.Entities.Employees;
 using System.Reflection;
 using System.Text;
-
-
+using MassTransit;
+using SCO.Identity.Application.MassTransit;
 
 namespace SCO.Identity.Application;
 public static class DependencyInjection
 {
+    public static IServiceCollection AddMassTransit(this IServiceCollection services, IConfiguration Configuration)
+    {
+        var rabbitSection = Configuration.GetSection("RabitServer");
+        var url = rabbitSection.GetValue<string>("Url");
+        var host = rabbitSection.GetValue<string>("Host");
+
+        services.AddMassTransit(config =>
+        {
+            config.AddBus(context => Bus.Factory.CreateUsingRabbitMq(c =>
+            {
+                c.Host($"rabbitmq://{url}/{host}", configurator =>
+                {
+                    configurator.Username("guest");
+                    configurator.Password("guest");
+                });
+                c.ConfigureEndpoints(context, SnakeCaseEndpointNameFormatter.Instance);
+            }));
+
+            config.AddConsumer<ActualCashierInfoConsumer>();
+            config.AddConsumer<LoginConsumer>();
+        });
+        return services;
+    }
+
     public static IServiceCollection AddAplication(this IServiceCollection services, IConfiguration _configuration )
     {
         AuthenticationConfiguration authenticationConfiguration = new AuthenticationConfiguration();
@@ -38,7 +62,6 @@ public static class DependencyInjection
         });
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.AddScoped<IPasswordHasher<Cashier>, PasswordHasher<Cashier>>();
-
         services.AddSingleton<AccessTokenGenerator>();
         services.AddSingleton<RefreshTokenGenerator>();
         services.AddSingleton<RefreshTokenValidator>();
@@ -46,8 +69,6 @@ public static class DependencyInjection
         services.AddScoped<IAuthenticator, Authenticator>();
         services.AddScoped<IRefreshTokenValidator , RefreshTokenValidator>();
         services.AddMediatR(Assembly.GetExecutingAssembly());
-
-       
 
         return services;
     }

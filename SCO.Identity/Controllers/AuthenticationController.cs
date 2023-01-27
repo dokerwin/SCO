@@ -1,5 +1,4 @@
 using FluentValidation;
-using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +9,7 @@ using SCO.Identity.Application.Authentication.Commands.Login;
 using SCO.Identity.Application.Authentication.Commands.Logout;
 using SCO.Identity.Application.Authentication.Commands.RefreshToken;
 using SCO.Identity.Application.Authentication.Commands.Register;
+using SCO.Identity.Application.Authentication.Queries;
 using System.Security.Claims;
 namespace SCO.Identity.Api.Conrollers;
 
@@ -18,17 +18,17 @@ namespace SCO.Identity.Api.Conrollers;
 public class AuthenticationController : ControllerBase
 {
     private readonly IMediator _mediatr;
-    private readonly IValidator<RegisterRequest> _validator;
-    public AuthenticationController(IMediator mediatr, IValidator<RegisterRequest> validator)
+    private readonly IValidator<RegisterDto> _validator;
+    public AuthenticationController(IMediator mediatr, IValidator<RegisterDto> validator)
     {
         _mediatr = mediatr;
         _validator = validator;
     }
 
-    [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] RegisterRequest registerRequest)
+    [HttpPost("Register")]
+    public async Task<IActionResult> Register([FromBody] RegisterDto registerRequest)
     {
-        ValidationResult result = await _validator.ValidateAsync(registerRequest);
+        var result = await _validator.ValidateAsync(registerRequest);
 
         if (!result.IsValid)
         {
@@ -69,5 +69,12 @@ public class AuthenticationController : ControllerBase
     {
         await _mediatr.Send(new LogoutCommand(HttpContext.User.FindFirstValue("id")));
         return NoContent();
+    }
+
+    [HttpGet("GetCashierInfo")]
+    public async Task<IActionResult> Get()
+    {
+        var result = await _mediatr.Send(new ActualCashierInfoQuery());
+        return Ok(result);
     }
 }

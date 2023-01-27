@@ -5,7 +5,7 @@ using SCO.Identity.Domain.Entities.Employees;
 
 namespace SCO.Identity.Aplications.Validators;
 
-public class RegisterRequstValidator : AbstractValidator<RegisterRequest>
+public class RegisterRequstValidator : AbstractValidator<RegisterDto>
 {
     public RegisterRequstValidator(IUnitOfWork unitOfWork)
     {
@@ -21,7 +21,7 @@ public class RegisterRequstValidator : AbstractValidator<RegisterRequest>
         RuleFor(x => x.Email).Custom(async (value, context) =>
         {
             Cashier emailInUse = await unitOfWork.Cashiers.FindByEmailAsync(value);
-            if (emailInUse != null)
+            if (emailInUse != null && emailInUse.Email != null)
             {
                 context.AddFailure("Email", "That email is taken");
             }

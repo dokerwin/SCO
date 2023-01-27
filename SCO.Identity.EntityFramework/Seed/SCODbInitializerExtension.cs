@@ -6,7 +6,7 @@ namespace SCO.Identity.EntityFramework.Seed
 {
     public static class SCODbInitializerExtension
     {
-        public static IApplicationBuilder UseItToSeedSqlServer(this IApplicationBuilder app)
+        public static IApplicationBuilder UseItToSeedDB(this IApplicationBuilder app)
         {
             ArgumentNullException.ThrowIfNull(app, nameof(app));
 
