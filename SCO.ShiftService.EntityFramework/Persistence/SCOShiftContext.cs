@@ -24,7 +24,7 @@ public class SCOShiftContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite(_configuration.GetConnectionString("SCOConnectionString"));
+        optionsBuilder.UseSqlite(_configuration.GetConnectionString("SCO_ShiftService_ConnectionString"));
     }
 }
 

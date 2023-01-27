@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using SCO.Contracts.DTOs;
 using SCO.Contracts.Requests.Identity;
-using SCO.ShiftService.Application.DTOs;
+using SCO.Contracts.Responses.Shift;
+using SCO.ShiftService.Application.Commands;
+using SCO.ShiftService.Application.Queries;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,25 +14,33 @@ namespace SCO.ShiftService.Controllers
     [ApiController]
     public class ShiftController : ControllerBase
     {
-        // GET: api/<ShiftController>
-        [HttpGet("GetShiftInfo")]
-        public ShiftInfoDto Get()
+        private readonly IMediator _mediator;
+        public ShiftController(IMediator mediator)
         {
-            return new ShiftInfoDto();
+            _mediator = mediator;
+        }
+
+        // GET: api/<ShiftController>
+        [HttpGet("ShiftInfo")]
+        public async Task<ShiftInfoDto> Get()
+        {
+            var shiftResponse = await _mediator.Send(new ActualShiftInfoQuery());
+            return shiftResponse.ShiftInfoDto;
         }
        
         // POST api/<ShiftController>
         [HttpPost("StartShift")]
-        public void StartShift([FromBody] LoginRequest login)
+        public async Task<StartShiftResponse> StartShift([FromBody] LoginRequest login)
         {
-
+            var startShiftResponse =  await _mediator.Send(new StartShiftCommand(login));
+            return startShiftResponse;
         }
 
         // POST api/<ShiftController>
         [HttpPost("EndShift")]
-        public void EndShift([FromBody] LoginRequest login)
+        public async void EndShift([FromBody] LoginRequest login)
         {
-
+            await _mediator.Send(new EndShiftCommand(login));
         }
     }
 }

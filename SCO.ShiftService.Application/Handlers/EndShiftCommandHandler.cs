@@ -12,7 +12,6 @@ using SCO.ShiftService.Domain;
 
 namespace SCO.ShiftService.Application.Handlers;
 
-
 public class EndShiftCommandHandler : AsyncRequestHandler<EndShiftCommand>
 {
     private readonly IBusControl _busControl;
@@ -43,15 +42,15 @@ public class EndShiftCommandHandler : AsyncRequestHandler<EndShiftCommand>
 
             if (loginResponse is not null && !string.IsNullOrEmpty(loginResponse.Message.AccessToken))
             {
-                var identityCashierInfoClient = _busControl.CreateRequestClient<CashierInfoRequest>(TimeSpan.FromSeconds(180));
+                var identityCashierInfoClient = _busControl.CreateRequestClient<ActualCashierInfoRequest>(TimeSpan.FromSeconds(180));
 
-                var cashierInfo = await identityCashierInfoClient.GetResponse<CashierInfoResponse>(request);
+                var cashierInfo = await identityCashierInfoClient.GetResponse<ActualCashierInfoResponse>(request);
 
                 var shiftInfo = await _unitOfWork.Shifts.GetActualShiftInfo(); 
 
                 if (cashierInfo != null && shiftInfo != null && ( 
-                    shiftInfo.CashierId == cashierInfo.Message.Id ||
-                    cashierInfo.Message.Role == "Administrator"))
+                    shiftInfo.CashierId == cashierInfo.Message.CashierInfoDto.Id ||
+                    cashierInfo.Message.CashierInfoDto.Role == "Administrator"))
                 {
                     await _shiftLogic.EndShift();
                 }

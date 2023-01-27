@@ -5,13 +5,14 @@ using Microsoft.Extensions.Logging;
 using SCO.Contracts.Identity;
 using SCO.Contracts.Requests.Identity;
 using SCO.Contracts.Responses.Identity;
+using SCO.Contracts.Responses.Shift;
 using SCO.ShiftService.Application.Commands;
 using SCO.ShiftService.Domain;
 
 namespace SCO.ShiftService.Application.Handlers;
 
 
-public class StartShiftCommandHandler : AsyncRequestHandler<StartShiftCommand>
+public class StartShiftCommandHandler : IRequestHandler<StartShiftCommand, StartShiftResponse>
 {
     private readonly IBusControl _busControl;
     private readonly IMapper _mapper;
@@ -29,23 +30,24 @@ public class StartShiftCommandHandler : AsyncRequestHandler<StartShiftCommand>
         _busControl = busControl;
     }
 
-    protected async override Task Handle(StartShiftCommand request, CancellationToken cancellationToken)
+    public async Task<StartShiftResponse> Handle(StartShiftCommand request, CancellationToken cancellationToken)
     {
         try
         {
             var identityLoginClient = _busControl.CreateRequestClient<LoginRequest>(TimeSpan.FromSeconds(180));
 
-            var loginResponse = await identityLoginClient.GetResponse<AuthenticatedUserResponse>(request);
+            var loginResponse = await identityLoginClient.GetResponse<AuthenticatedUserResponse>(new LoginRequest(request.Credential.Email, request.Credential.Password));
 
             if (loginResponse is not null && !string.IsNullOrEmpty(loginResponse.Message.AccessToken))
             {
-                var identityCashierInfoClient = _busControl.CreateRequestClient<CashierInfoRequest>(TimeSpan.FromSeconds(180));
+                var identityCashierInfoClient = _busControl.CreateRequestClient<ActualCashierInfoRequest>(TimeSpan.FromSeconds(180));
 
-                var cashierInfo = await identityCashierInfoClient.GetResponse<CashierInfoResponse>(request);
+                var cashierInfo = await identityCashierInfoClient.GetResponse<ActualCashierInfoResponse>(new ActualCashierInfoRequest());
 
                 if (cashierInfo != null)
                 {
-                   await _shiftLogic.StartShift(cashierInfo.Message.Id);   
+                   await _shiftLogic.StartShift(cashierInfo.Message.CashierInfoDto.Id);
+                   return await Task.FromResult(new StartShiftResponse("Success"));
                 }
             }
             
@@ -54,5 +56,7 @@ public class StartShiftCommandHandler : AsyncRequestHandler<StartShiftCommand>
         {
             _logger.LogError(ex.Message);
         }
+
+        return await Task.FromResult(new StartShiftResponse("Denied"));
     }
 }

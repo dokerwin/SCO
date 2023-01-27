@@ -3,5 +3,5 @@
 public interface IShiftLogic
 {
     Task EndShift();
-    Task StartShift(Guid id);
+    Task StartShift(Guid cashierId);
 }

@@ -11,7 +11,6 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     public UnitOfWork(SCOShiftContext context,
         IShiftRepository shiftRepository)
-       
     {
         _context = context;
         Shifts = shiftRepository;
