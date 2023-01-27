@@ -67,16 +67,6 @@ services:
     depends_on:
         - rabbitmq3
 
-  sco.web.ui:
-    image: ${DOCKER_REGISTRY-}scowebui
-    build:
-      context: .
-      dockerfile: SCO.Web.UI/Dockerfile
-    ports:
-      - 8002:80
-    networks:
-      - frontend
-
   sco.configurationservice.api:
     image: ${DOCKER_REGISTRY-}scoconfigurationserviceapi
     build:
@@ -116,3 +106,13 @@ services:
         - rabbitmq3
     networks:
       - backend
+
+  sco.web.ui:
+    image: ${DOCKER_REGISTRY-}scowebui
+    build:
+      context: .
+      dockerfile: SCO.Web.UI/Dockerfile
+    ports:
+      - 8002:80
+    networks:
+      - frontend
