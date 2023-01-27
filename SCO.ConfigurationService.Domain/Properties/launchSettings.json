@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SCO.ConfigurationService.Domain": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55781;http://localhost:55782"
+    }
+  }
+}

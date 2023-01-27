@@ -29,12 +29,12 @@ public static class DependencyInjection
             }));
 
             config.AddConsumer<ShopDataRequestConsumer>();
+            config.AddConsumer<PaymentConfigurationDataConsumer>();
         });
         return services;
     }
-    public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration Configuration)
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddMassTransit(Configuration);
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());
         return services;
