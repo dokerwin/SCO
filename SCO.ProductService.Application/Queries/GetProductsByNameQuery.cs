@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using SCO.ProductService.Application.DTOs.Read.ProductDTOs;
+using SCO.Contracts.DTOs;
 
 namespace SCO.ProductService.Application.Queries;
 

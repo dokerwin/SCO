@@ -3,4 +3,5 @@ using SCO.Contracts.DTOs;
 
 namespace SCO.ProductService.Application.Queries;
 
-public record GetAllProductsQuery() : IRequest<IEnumerable<ProductDto>>;
+public record GetProductsByIdQuery(Guid Id) : IRequest<ProductDto>;
+

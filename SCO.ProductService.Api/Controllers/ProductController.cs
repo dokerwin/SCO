@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SCO.Contracts.DTOs;
 using SCO.ProductService.Application.DTOs.Read.ProductDTOs;
 using SCO.ProductService.Application.Queries;
 
@@ -9,23 +10,28 @@ namespace SCO.Api.Conrollers;
 [Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
-    private readonly IProductQueryService _productQueryService;
+
     private readonly IMediator _mediator;
 
     public IRequest<object> GetAllProductQuery { get; private set; }
 
-    public ProductController(IProductQueryService productQueryService, IMediator mediator)
+    public ProductController(IMediator mediator)
     {
-        _productQueryService = productQueryService;
         _mediator = mediator;
     }
 
     [HttpGet("{id}")]
     [AllowAnonymous]
-    public ActionResult<IEnumerable<ProductDto>> Get([FromRoute] Guid id)
+    public async Task< ActionResult<ProductDto>> Get([FromRoute] Guid id)
     {
-        var restaurant = _productQueryService.GetById(id);
-        return Ok(restaurant);
+        var result = await _mediator.Send(new GetProductsByIdQuery(id));
+
+        if (result is not null)
+        {
+            return Ok(result);
+        }
+
+        return NotFound("The product was not found");
     }
 
 

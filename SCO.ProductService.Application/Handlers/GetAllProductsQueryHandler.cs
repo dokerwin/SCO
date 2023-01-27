@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using SCO.ProductService.Application.Common.Interfaces.Persistance;
-using SCO.ProductService.Application.DTOs.Read.ProductDTOs;
+using SCO.Contracts.DTOs;
 using SCO.ProductService.Application.Queries;
 
 namespace SCO.ProductService.Application.Handlers;
