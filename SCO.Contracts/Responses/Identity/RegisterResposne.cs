@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace SCO.Contracts.Responses.Identity;
 
-public record RegisterResponse();
+public record RegisterResponse(bool Result);
 

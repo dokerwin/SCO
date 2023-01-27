@@ -2,7 +2,7 @@
 
 namespace SCO.Contracts.Requests.Identity;
 
-public class RegisterRequest
+public class RegisterDto
 {
     [Required]
     [EmailAddress]
