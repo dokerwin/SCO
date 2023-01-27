@@ -1,4 +1,5 @@
 ﻿using SCO.BasketService.Domain.Entities;
+using SCO.BasketService.Domain.Enums;
 
 namespace SCO.BasketService.Domain;
 
@@ -10,5 +11,8 @@ public interface IBasketLogic
     Order GetActualOrder();
     void OpenOrder();
     void AbortOrder();
-    void CloseOrder();
+    Task CloseOrder();
+    OrderStatus GetOrderStatus();
+    void SetPayment(Guid paymentId);
+    void SetShift(Guid shiftId);
 }

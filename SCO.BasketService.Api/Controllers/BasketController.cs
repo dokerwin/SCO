@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SCO.BasketService.Application.Commands;
 using SCO.BasketService.Application.Queries;
 using SCO.Contracts.DTOs;
+using SCO.Contracts.Responses.Basket;
 
 namespace SCO.BasketService.Conrollers;
 [ApiController]
@@ -10,7 +11,7 @@ namespace SCO.BasketService.Conrollers;
 public class BasketController : ControllerBase
 {
     private readonly IMediator _mediator;
-    public BasketController( IMediator mediator)
+    public BasketController(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -37,16 +38,16 @@ public class BasketController : ControllerBase
         return await Task.FromResult(basketTotal.BasketPrice);
     }
 
-    [HttpPost]
-    public async void AddProductToBasket([FromBody] Guid productId)
+    [HttpPost("{id}")]
+    public async Task<AddProductToBasketResposne> AddProductToBasket([FromRoute] Guid id)
     {
-        await _mediator.Send(new AddProductToBasketCommand(productId));
+        return await _mediator.Send(new AddProductToBasketCommand(id));
     }
 
     [HttpPost("OpenOrder")]
-    public async void OpenOrder()
+    public async Task<OpenOrderResponse> OpenOrder()
     {
-        await _mediator.Send(new OpenOrderCommand());
+        return await _mediator.Send(new OpenOrderCommand());
     }
 
     [HttpPost("AbortOrder")]
@@ -56,9 +57,9 @@ public class BasketController : ControllerBase
     }
 
     [HttpPost("FinishOrder")]
-    public async void FinishOrder()
+    public async Task<FinishOrderResponse> FinishOrder()
     {
-        await _mediator.Send(new FinishOrderCommand());
+        return await _mediator.Send(new FinishOrderCommand());
     }
 
     [HttpDelete]
@@ -66,5 +67,4 @@ public class BasketController : ControllerBase
     {
         await _mediator.Send(new RemoveProductFromBasketCommand(productId));
     }
-
 }

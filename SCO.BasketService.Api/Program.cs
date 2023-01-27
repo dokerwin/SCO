@@ -11,6 +11,7 @@ using SCO.BasketService.EntityFramework;
 using SCO.BasketService.Infrastructure;
 using SCO.BasketService.Infrastructure.Persitence;
 using SCO.Contracts.DTOs;
+using SCO.Contracts.Requests.Payment;
 using SCO.Contracts.Requests.Product;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,13 +45,11 @@ builder.Services.AddMassTransit(config =>
         c.ConfigureEndpoints(context, SnakeCaseEndpointNameFormatter.Instance);
     }));
 
-    config.AddRequestClient<ProductsRequest>(); 
+    config.AddRequestClient<ProductsRequest>();
+    config.AddRequestClient<PaymentRequest>();
     config.AddConsumer<OrderConsumer>();
     config.AddConsumer<AddItemToBasketConsumer>();
 });
-
-
-
 
 var app = builder.Build();
 

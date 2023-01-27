@@ -9,7 +9,7 @@ using SCO.Contracts.Requests.Order;
 using SCO.Contracts.Requests.Product;
 using SCO.Contracts.Responses;
 
-namespace SCO.BasketService.Application.Handlers;
+namespace SCO.BasketService.Application.Handlers.Commands;
 
 public class RemoveProductFromBasketCommandHandler : IRequestHandler<RemoveProductFromBasketCommand>
 {

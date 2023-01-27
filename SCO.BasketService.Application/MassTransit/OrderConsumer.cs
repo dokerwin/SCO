@@ -3,6 +3,10 @@ using MassTransit;
 using SCO.BasketService.Application.Common.Interfaces.Persistance;
 using SCO.Contracts.Requests.Order;
 using SCO.Contracts.DTOs;
+using Microsoft.Extensions.Logging;
+using SCO.BasketService.Application.Handlers.Commands;
+using SCO.Contracts.Responses.Basket;
+using SCO.BasketService.Domain;
 
 namespace SCO.BasketService.Application.MassTransit;
 
@@ -10,11 +14,14 @@ public class OrderConsumer : IConsumer<BasketRequest>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
-
-    public OrderConsumer(IUnitOfWork unitOfWork, IMapper mapper)
+    private readonly ILogger<OrderConsumer> _logger;
+    private readonly IBasketLogic _basketLogic;
+    public OrderConsumer(IUnitOfWork unitOfWork, IMapper mapper, ILogger<OrderConsumer> logger, IBasketLogic basketLogic)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _logger = logger;
+        _basketLogic = basketLogic;
     }
 
     /// <summary>
@@ -26,14 +33,23 @@ public class OrderConsumer : IConsumer<BasketRequest>
     {
         try 
         {
-            var orderId = context.Message.BasketId;
-            var orders = await _unitOfWork.Orders.Find(x => x.Id == orderId);
-            var orderDtos = _mapper.Map<IEnumerable<ProductDto>>(orders);
-            await context.RespondAsync(orderDtos);
+            var order = _basketLogic.GetActualOrder();
+
+            var itemsDto = _mapper.Map<IEnumerable<BasketItemDetailDto>>(order.Items);
+
+            await context.RespondAsync(new BasketDetailsResponse()
+            {
+                BasketDetails = new BasketDto()
+                {
+                    ItemDetails = itemsDto,
+                    OrderedOn = order.OrderedOn,
+                    OrderId = order.Id
+                }
+            });
         }
         catch (Exception ex)
         {
-            
+            _logger.LogError(ex.Message);
         }   
     }
 }

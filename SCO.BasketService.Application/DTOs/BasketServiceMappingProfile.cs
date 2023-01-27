@@ -11,7 +11,10 @@ public class BasketServiceMappingProfile : Profile
     /// </summary>
     public BasketServiceMappingProfile()
     {
-
         CreateMap<Item, BasketItemDetailDto>().ReverseMap();
+        CreateMap<Item, ProductDto>()
+        .ForMember(m => m.ShortName, c => c.MapFrom(s => s.Name))
+        .ForMember(m => m.UnitPrice, c => c.MapFrom(s => s.Price))
+        .ReverseMap();
     }
 }

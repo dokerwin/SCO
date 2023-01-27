@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using SCO.BasketService.Application.Commands;
 using SCO.BasketService.Domain;
 
-namespace SCO.BasketService.Application.Handlers;
+namespace SCO.BasketService.Application.Handlers.Commands;
 
 public class AbortOrderCommandHandler : AsyncRequestHandler<AbortOrderCommand>
 {

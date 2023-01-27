@@ -3,7 +3,7 @@ using SCO.BasketService.Application.Queries;
 using SCO.BasketService.Domain;
 using SCO.Contracts.Responses.Basket;
 
-namespace SCO.BasketService.Application.Handlers;
+namespace SCO.BasketService.Application.Handlers.Queries;
 
 public class GetBasketPriceQueryHandler : IRequestHandler<GetBasketPriceQuery, BasketPriceResponse>
 {

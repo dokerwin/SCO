@@ -24,7 +24,7 @@ public class SCOBasketServiceContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("SCO_BasketService_ConnectionString"));
+        optionsBuilder.UseSqlite(_configuration.GetConnectionString("SCO_BasketService_ConnectionString"));
     }
 }
 

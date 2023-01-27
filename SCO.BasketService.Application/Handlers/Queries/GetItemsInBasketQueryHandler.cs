@@ -5,14 +5,14 @@ using SCO.BasketService.Domain;
 using SCO.Contracts.DTOs;
 using SCO.Contracts.Responses.Basket;
 
-namespace SCO.BasketService.Application.Handlers;
+namespace SCO.BasketService.Application.Handlers.Queries;
 
-public class GetBasketDetailsQueryHandler : IRequestHandler<GetBasketDetailsQuery, BasketDetailsResponse>
+public class GetItemsInBasketQueryHandler : IRequestHandler<GetBasketDetailsQuery, BasketDetailsResponse>
 {
     private readonly IBasketLogic _basketLogic;
     private readonly IMapper _mapper;
 
-    public GetBasketDetailsQueryHandler(IBasketLogic basketLogic, IMapper mapper)
+    public GetItemsInBasketQueryHandler(IBasketLogic basketLogic, IMapper mapper)
     {
         _basketLogic = basketLogic;
         _mapper = mapper;
@@ -29,9 +29,9 @@ public class GetBasketDetailsQueryHandler : IRequestHandler<GetBasketDetailsQuer
             BasketDetails = new BasketDto()
             {
                 ItemDetails = itemsDto,
-                OrderId = order.Id,
-                OrderedOn = order.OrderedOn
+                OrderedOn = order.OrderedOn,
+                OrderId = order.Id
             }
-        });
+        }); ;
     }
 }
