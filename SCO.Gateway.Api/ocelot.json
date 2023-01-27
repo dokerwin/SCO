@@ -51,7 +51,7 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/basket/{id}",
+      "UpstreamPathTemplate": "/api/basket/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       "DownstreamPathTemplate": "/api/basket/{id}",
       "DownstreamScheme": "http",
@@ -63,9 +63,9 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/api/basket",
-      "UpstreamHttpMethod": [ "Post", "Put" ],
-      "DownstreamPathTemplate": "/api/basket",
+      "UpstreamPathTemplate": "/api/basket/{id}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/basket/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -75,13 +75,85 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamPathTemplate": "/api/basket/finishorder",
       "UpstreamHttpMethod": [ "Post", "Put" ],
-      "DownstreamPathTemplate": "/api/Authentication",
+      "DownstreamPathTemplate": "/api/basket/FinishOrder",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "sco.basketservice.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/basket/openorder",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/basket/OpenOrder",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.basketservice.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/basket/totalprice",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/basket/TotalPrice",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.basketservice.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/auth/register",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/authentication/Register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.identity.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/shift/startshift",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/shift/StartShift",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.shiftservice.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/shift/endshift",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/shift/EndShift",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.shiftservice.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/shift/shiftinfo",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/shift/ShiftInfo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sco.shiftservice.api",
           "Port": 80
         }
       ]
