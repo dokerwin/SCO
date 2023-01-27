@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SCO.PaymentService.Domain.ValueObjects;
 
-public class PaymentResult
+public class CardPaymentResult
 {
     public Guid PaymentId { get; set; }
-    public int Result { get; set; }  
-    
+    public int Result { get; set; }
+    public string CardPan { get; set; }
 }

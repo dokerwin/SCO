@@ -6,5 +6,6 @@ public abstract class PaymentRequest
 {
     public decimal TotalAmount { get; set; }
     public PaymentType PaymentType { get; set; }
+    public string BatchId { get; set; }
 }
 

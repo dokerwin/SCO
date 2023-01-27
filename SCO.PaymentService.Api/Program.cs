@@ -1,4 +1,5 @@
 using MassTransit;
+using Microsoft.Extensions.Configuration;
 using SCO.PaymentService.Application;
 using SCO.PaymentService.Application.MassTransit;
 using SCO.PaymentService.EntityFramework;
@@ -8,9 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 builder.Services.AddEntityFramework(builder.Configuration);
+builder.Services.AddMassTransit(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

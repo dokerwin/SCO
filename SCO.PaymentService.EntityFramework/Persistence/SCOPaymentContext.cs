@@ -25,7 +25,7 @@ public class SCOPaymentContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("SCO_PaymentService_ConnectionString"));
+        optionsBuilder.UseSqlite(_configuration.GetConnectionString("SCO_PaymentService_ConnectionString"));
     }
 }
 

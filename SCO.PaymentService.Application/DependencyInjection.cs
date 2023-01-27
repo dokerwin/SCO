@@ -34,9 +34,8 @@ public static class DependencyInjection
         });
         return services;
     }
-    public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration Configuration)
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddMassTransit(Configuration);
         services.AddSingleton<PaymentConfiguration>();
         services.AddScoped<IPaymentLogic, PaymentLogic>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());

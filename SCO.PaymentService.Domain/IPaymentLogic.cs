@@ -4,6 +4,6 @@ namespace SCO.PaymentService.Domain;
 
 public interface IPaymentLogic
 {
-    Task<PaymentResult> ProcessPayment(Guid orderId, decimal amount);
-    Task<PaymentResult> AbortPayment(Guid paymentId);
+    Task<CardPaymentResult> ProcessPayment(Guid orderId, decimal amount);
+    Task<CardPaymentResult> AbortPayment(Guid paymentId);
 }

@@ -1,7 +1,9 @@
-﻿using SCO.PaymentService.Application.Configuration;
+﻿using Microsoft.Extensions.Logging;
+using SCO.PaymentService.Application.Configuration;
 using SCO.PaymentService.Domain;
 using SCO.PaymentService.Domain.Enums;
 using SCO.PaymentService.Domain.EPSPaymentRequests;
+using SCO.PaymentService.Domain.PaymentResponses;
 using SCO.PaymentService.Domain.ValueObjects;
 using System.Text;
 using System.Text.Json;
@@ -12,14 +14,17 @@ public class PaymentLogic : IPaymentLogic
 {
     private readonly PaymentConfiguration _paymentConfiguration;
 
-    public PaymentLogic(PaymentConfiguration paymentConfiguration)
+    private readonly ILogger<PaymentLogic> _logger;
+
+    public PaymentLogic(PaymentConfiguration paymentConfiguration, ILogger<PaymentLogic> logger)
     {
         _paymentConfiguration = paymentConfiguration;
+        _logger = logger;
     }
 
-    public Task<PaymentResult> AbortPayment(Guid paymentId)
+    public Task<CardPaymentResult> AbortPayment(Guid paymentId)
     {
-        PaymentResult result = new PaymentResult()
+        CardPaymentResult result = new CardPaymentResult()
         {
             PaymentId = paymentId,
             Result = (int)PaymentStatus.Aborted
@@ -27,29 +32,44 @@ public class PaymentLogic : IPaymentLogic
         return Task.FromResult(result);
 
     }
-    public async Task<PaymentResult> ProcessPayment(Guid OrderID, decimal amount)
+    public async Task<CardPaymentResult> ProcessPayment(Guid OrderID, decimal amount)
     {
-
-        Guid newPaymentID = Guid.NewGuid();
-
-        PaymentResult result = new PaymentResult() 
-        { 
-            PaymentId = newPaymentID,
-            Result = (int)PaymentStatus.Started
-        };
-
-        var json = JsonSerializer.Serialize(new CardPaymentRequest() 
-            { 
-               TotalAmount = amount 
+        string paymentResponse = string.Empty;
+        try
+        {
+            var json = JsonSerializer.Serialize(new CardPaymentRequest()
+            {
+                TotalAmount = amount,
+                BatchId = "OP2143"
             });
 
-        using (var client = new HttpClient() { Timeout = TimeSpan.FromSeconds(_paymentConfiguration.PaymentConfigurationData.Timeout) })
+            using (var client = new HttpClient() { Timeout = TimeSpan.FromSeconds(_paymentConfiguration.PaymentConfigurationData.Timeout) })
+            {
+                var response = await client.PostAsync(
+                     _paymentConfiguration.PaymentConfigurationData.TerminalUrl,
+                     new StringContent(json, Encoding.UTF8, "application/json"));
+                paymentResponse = await response.Content.ReadAsStringAsync();
+
+            }
+
+            var cardPaymetResponse = JsonSerializer.Deserialize<CardPaymetResponse>(paymentResponse);
+
+            if (cardPaymetResponse != null)
+            {
+
+                return await Task.FromResult(new CardPaymentResult()
+                {
+                    PaymentId = Guid.NewGuid(),
+                    Result = cardPaymetResponse.Result == "Success" ? (int)PaymentStatus.Successed : (int)PaymentStatus.Failure,
+                    CardPan = cardPaymetResponse.CardPan
+                });
+            }
+        }
+        catch (Exception ex)
         {
-            var response = await client.PostAsync(
-                 _paymentConfiguration.PaymentConfigurationData.TerminalUrl,
-                 new StringContent(json, Encoding.UTF8, "application/json"));
+            _logger.LogError(ex.Message);
         }
 
-        return await Task.FromResult(result);
+        return await Task.FromResult(new CardPaymentResult() { Result = (int)PaymentStatus.Failure });
     }
 }
