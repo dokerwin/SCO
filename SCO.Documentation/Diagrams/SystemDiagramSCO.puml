@@ -1,0 +1,71 @@
+@startuml ddf
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include ./../C4_Component.puml
+!else
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!endif
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for SCO System - API Application
+
+
+Person(customer, Customer, "A customer of the shop, trying to pay purchases")
+Person(cashier, Cashier, "Shop worker, managing SCO settings, helping buyers to finalize order")
+
+System_Ext(mbs, "External loyalty system", "Stores information about customers loyalty points")
+System_Ext(nbs, "External NIP system", "Stores all of the NIP information about customers")
+System_Ext(promExt, "External Promotion system", "Stores promotion information about products")
+System_Boundary(sco, "SCO"){
+    Container(spa, "Single Page Application", "javascript and angular", "Provides all the retail functionality to customers via the singelpage application on SCO screen.")
+    Container(gateway, "API Gateway", ".Net Ocelot", "Routers all requests to appropriate services endpoinds")
+    Container(message_bus, "Message Bus", "RabbitMQ", "Transport for business events or async request/responses")
+
+    Boundary(identityBoundary, "Identity"){
+      ContainerDb(identityDb, "Database", "MS SQL SERVER", "Stores products, cashier information, hashed authentication credentials, access logs, etc.")
+      Container(indentityService, "Identity service", ".Net with ASP.NET Core", "Provide authentitication")
+    }
+    
+    Boundary(servicesBoundary, "SCO Services"){
+      ContainerDb(productDb, "Read Database", "SQLite", "Stores products only read information.")
+      ContainerDb(receiptDb, "Database", "MS SQL SERVER", "Stores basket inforamtion.")
+      ContainerDb(shiftDb, "Database", "MS SQL SERVER", "Stores shift inforamtion.")
+      ContainerDb(paymentDb, "Database", "MS SQL SERVER", "Stores payment information.")
+      Container(productService, "Product service", ".Net with ASP.NET Core", "Responsible for handling products request.")
+      Container(basketService, "Basket service", ".Net with ASP.NET Core", "Responsible for orders handling")
+      Container(paymentService, "Payment service", ".Net with ASP.NET Core", "Responsible for payment")
+      Container(shiftService, "Shift service", ".Net with ASP.NET Core", "Responsible for shift sarting and finising")
+      Container(printerService, "Printer service", ".Net with ASP.NET Core", "Responsible for printing receipt")
+    }
+    
+   
+    Rel(gateway, basketService, "Uses", "async, JSON/HTTPS")
+    
+    Rel(gateway, productService, "Uses", "async, JSON/HTTPS")
+    Rel(gateway, mbs, "Read", "JSON")
+    Rel(gateway, nbs, "Read", "JSON")
+    Rel(gateway, promExt, "Read", "JSON")
+    Rel(gateway, indentityService, "Uses", "async, JSON/HTTPS")
+    Rel(gateway, shiftService, "Uses", "async, JSON/HTTPS")
+
+    Rel(productService, productDb, "Read", "async, ADO.NET")
+    Rel(basketService, receiptDb, "Read & write", "async, ADO.NET")
+    Rel(paymentService, paymentDb, "Read & write", "async, ADO.NET")
+    Rel(shiftService, shiftDb, "Read & write", "async, ADO.NET")
+    Rel(indentityService, identityDb, "Uses", "async, JSON/HTTPS")
+     
+    Rel(basketService, message_bus, "Uses", "async, JSON/HTTPS")
+    Rel(productService, message_bus, "Uses", "async, JSON/HTTPS")
+    Rel(paymentService, message_bus, "Uses", "async, JSON/HTTPS")
+    Rel(gateway, message_bus, "Uses", "async, JSON/HTTPS")
+
+    Rel(message_bus, printerService "Uses", "async, JSON/HTTPS")
+}
+
+Rel(spa, gateway, "Uses", "async JSON/HTTPS")
+
+Rel(cashier, spa, "Uses", "HTTPS")
+Rel(customer, spa, "Uses", "HTTPS")
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml sadsadsad
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include ./../C4_Component.puml
+!else
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!endif
+
+LAYOUT_WITH_LEGEND()
+
+title Cointainer diagram for SCO System
+Container(gateway, "API Gateway", "Dot.Net with ASP.NET Core", "Routers all requests to appropriate services endpoints")
+Container_Boundary(iden, "SCO Service"){
+Component(auth, "Authorization controller", "Rest controller", "Allows cashiers to sign in to system and start shift")
+
+Component_Ext(mediator, "Mediator", "MediatR service", "Handle comunications between controllers and services")
+
+Component(chang_password, "Change password Command", "CQRS Command Handler", "Changes accounts password")
+Component(sign_query, "Sign in query", "CQRS Query Handler", "Sign in cashiers")
+Component(auth_service, "Authorization Service", "Dot.Net Service", "Provides functionality related to singing in, verifying password")
+Component(account_repository, "Accounts Repository", "Dot.Net Service", "Provides funvtionality to retriving or updating accounts")
+
+Rel(gateway, auth, "Uses")
+Rel(auth, mediator, "Send queries")
+
+Rel(mediator, sign_query, "Uses")
+Rel(sign_query, auth_service, "Send queries")
+
+
+Rel(mediator, chang_password, "Uses")
+Rel(chang_password, account_repository, "Uses")
+Rel(chang_password, auth_service, "Uses")
+Rel(sign_query, account_repository, "Uses")
+
+}
+
+ContainerDb(iden_db, "Identity database", "MS SQL SERVER", "Holds accounts information")
+
+Rel(account_repository, iden_db, "Read from and writes", "Async, ADO.NET")
+
+@enduml
