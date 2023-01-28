@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class OpenApiJsonWriter
+ </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class OpenApiJsonWriter
+ ">
+  
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter">
+
+
+  <h1 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter" class="text-break">Class OpenApiJsonWriter
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html">OpenApiWriterBase</a></div>
+    <div class="level2"><span class="xref">OpenApiJsonWriter</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Microsoft.OpenApi.Writers.IOpenApiWriter.html">IOpenApiWriter</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_Scopes">OpenApiWriterBase.Scopes</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_Flush">OpenApiWriterBase.Flush()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Single_">OpenApiWriterBase.WriteValue(Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Double_">OpenApiWriterBase.WriteValue(Double)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Decimal_">OpenApiWriterBase.WriteValue(Decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Int32_">OpenApiWriterBase.WriteValue(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Int64_">OpenApiWriterBase.WriteValue(Int64)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_DateTime_">OpenApiWriterBase.WriteValue(DateTime)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_DateTimeOffset_">OpenApiWriterBase.WriteValue(DateTimeOffset)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Boolean_">OpenApiWriterBase.WriteValue(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_Object_">OpenApiWriterBase.WriteValue(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_IncreaseIndentation">OpenApiWriterBase.IncreaseIndentation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_DecreaseIndentation">OpenApiWriterBase.DecreaseIndentation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteIndentation">OpenApiWriterBase.WriteIndentation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_CurrentScope">OpenApiWriterBase.CurrentScope()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_StartScope_Microsoft_OpenApi_Writers_ScopeType_">OpenApiWriterBase.StartScope(ScopeType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_EndScope_Microsoft_OpenApi_Writers_ScopeType_">OpenApiWriterBase.EndScope(ScopeType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_IsTopLevelScope">OpenApiWriterBase.IsTopLevelScope()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_IsObjectScope">OpenApiWriterBase.IsObjectScope()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_IsArrayScope">OpenApiWriterBase.IsArrayScope()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_VerifyCanWritePropertyName_System_String_">OpenApiWriterBase.VerifyCanWritePropertyName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_Settings">OpenApiWriterBase.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_Writer">OpenApiWriterBase.Writer</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.OpenApi.Writers.html">Microsoft.OpenApi.Writers</a></h6>
+  <h6><strong>Assembly</strong>: Microsoft.OpenApi.dll</h6>
+  <h5 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OpenApiJsonWriter : OpenApiWriterBase, IOpenApiWriter</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter__ctor_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.#ctor*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter__ctor_System_IO_TextWriter_Microsoft_OpenApi_Writers_OpenApiWriterSettings_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.#ctor(System.IO.TextWriter,Microsoft.OpenApi.Writers.OpenApiWriterSettings)">OpenApiJsonWriter(TextWriter, OpenApiWriterSettings)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OpenApiJsonWriter(TextWriter textWriter, OpenApiWriterSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">textWriter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterSettings.html">OpenApiWriterSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter__ctor_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.#ctor*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter__ctor_System_IO_TextWriter_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.#ctor(System.IO.TextWriter)">OpenApiJsonWriter(TextWriter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OpenApiJsonWriter(TextWriter textWriter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">textWriter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_BaseIndentation_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.BaseIndentation*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_BaseIndentation" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.BaseIndentation">BaseIndentation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override int BaseIndentation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_BaseIndentation">OpenApiWriterBase.BaseIndentation</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteEndArray_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteEndArray*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteEndArray" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteEndArray">WriteEndArray()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteEndArray()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteEndArray">OpenApiWriterBase.WriteEndArray()</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteEndObject_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteEndObject*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteEndObject" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteEndObject">WriteEndObject()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteEndObject()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteEndObject">OpenApiWriterBase.WriteEndObject()</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteNull_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteNull*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteNull" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteNull">WriteNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteNull()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteNull">OpenApiWriterBase.WriteNull()</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WritePropertyName_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WritePropertyName*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WritePropertyName_System_String_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WritePropertyName(System.String)">WritePropertyName(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WritePropertyName(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WritePropertyName_System_String_">OpenApiWriterBase.WritePropertyName(String)</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteRaw_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteRaw*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteRaw_System_String_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteRaw(System.String)">WriteRaw(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteRaw(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteRaw_System_String_">OpenApiWriterBase.WriteRaw(String)</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteStartArray_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteStartArray*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteStartArray" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteStartArray">WriteStartArray()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteStartArray()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteStartArray">OpenApiWriterBase.WriteStartArray()</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteStartObject_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteStartObject*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteStartObject" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteStartObject">WriteStartObject()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteStartObject()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteStartObject">OpenApiWriterBase.WriteStartObject()</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteValue_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteValue*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteValue_System_String_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteValue(System.String)">WriteValue(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValue_System_String_">OpenApiWriterBase.WriteValue(String)</a></div>
+
+
+  <a id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteValueSeparator_" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteValueSeparator*"></a>
+  <h4 id="Microsoft_OpenApi_Writers_OpenApiJsonWriter_WriteValueSeparator" data-uid="Microsoft.OpenApi.Writers.OpenApiJsonWriter.WriteValueSeparator">WriteValueSeparator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void WriteValueSeparator()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.OpenApi.Writers.OpenApiWriterBase.html#Microsoft_OpenApi_Writers_OpenApiWriterBase_WriteValueSeparator">OpenApiWriterBase.WriteValueSeparator()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Microsoft.OpenApi.Writers.IOpenApiWriter.html">IOpenApiWriter</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

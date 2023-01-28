@@ -4,12 +4,156 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.Api.Conrollers.ProductController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.Api.Conrollers.ProductController.html",
+          "hash": "F7d9bpDe6jZGC/C9b1feU9G/2qOIzKuGhne86e+GDYA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.Api.Conrollers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.Api.Conrollers.html",
+          "hash": "Lusp3YYFlAGA9UYLW9g42I5pd4IOOHizCh5wXLbQOIw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.BasketService.Conrollers.BasketController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.BasketService.Conrollers.BasketController.html",
+          "hash": "UEIZ144ImGzT42bAPFsDLP3i2TGU0ezDV0zapLDpaMc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.BasketService.Conrollers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.BasketService.Conrollers.html",
+          "hash": "0gmaKoIJwVOXnVdrCen1tOvZ9VjKhFj4cfRutZ9HFvc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.BasketService.Module.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.BasketService.Module.html",
+          "hash": "Ok54MvENTa4qrRPTJDY3Yy5541N5qpvEocf92a8REF8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.BasketService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.BasketService.html",
+          "hash": "9Ev/VlHvQwW8X0tx9RbBFye2yxA8KedE4ZyOul67cUo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.Identity.Api.Conrollers.AuthenticationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.Identity.Api.Conrollers.AuthenticationController.html",
+          "hash": "qRmWQw3aHxPMNfGgh69KHzWhNfiBHgmjALWMTvUEorg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.Identity.Api.Conrollers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.Identity.Api.Conrollers.html",
+          "hash": "qk5eQrj/Q0b4YaL1tgLc9HZGhiapxV6CcowN1E4Ymjk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.PaymentService.Conrollers.PaymentController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.PaymentService.Conrollers.PaymentController.html",
+          "hash": "NiaJk5IDFr5P21M7lQril8mkCTQ6KjAWfS1s9XETosI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.PaymentService.Conrollers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.PaymentService.Conrollers.html",
+          "hash": "uM+B+ILtIqvORp8463YfVXPUEJFNDoYEr6FTIyVsBYY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.ShiftService.Controllers.ShiftController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.ShiftService.Controllers.ShiftController.html",
+          "hash": "PlwAb/jbtpkjtyYWemBS0mp9mFGNxuqWFsK2580Zjpg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SCO.ShiftService.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SCO.ShiftService.Controllers.html",
+          "hash": "JdIaYvIOgr3LHKcE/qx9OZyiUEwBi246U0Rhc83sIDo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "w8d1EpB2lW1D3UCMrWZ0ksbZYHNg9tW3sG1gvOi2q60="
+          "hash": "JeOn1Q2igwqjVksM9I3AIC8+NkGdqvy/SXgv5xymB2U="
         }
       },
       "is_incremental": true,
@@ -21,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "53cDPdjyKTmYSaPMwcMYYJO/bYpeY21eGi/JWyVQBqE="
+          "hash": "xnQdYltBNCWBWtda7JEZX6X2fzhsYyMRtvlQXJ29EsE="
         }
       },
       "is_incremental": false,
@@ -36,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/diagrams.html",
-          "hash": "le9gSSjH+2HITBbVrqFAk6hu7LYclB09sTBVRzQvdKk="
+          "hash": "77MWiIUFPJPgrUDHJaUFqfmlRJqt/DwPjA7LMOc/N+4="
         }
       },
       "is_incremental": true,
@@ -48,10 +192,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "0ih5L4Ci8SKz+pruaxv8ALNYPINkJxGMlP9celr9ljc="
+          "hash": "wEFPjEhsoma/vcj1d/cAyktAXaCYp36bSUW8SEdhUZE="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -60,7 +204,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "pttpnqQa60T43TfJUr833DcyVqxGtn3r+voxtObJBWA="
+          "hash": "0dxAkoIOCFFyTzh0QUQ498/dVfM5WxtCsv+YKPp5PTk="
         }
       },
       "is_incremental": false,
@@ -72,7 +216,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "uQiOLckxmpguAW0I3wZ9MSJZhXIpk/qTLoh07UkkF3s="
+          "hash": "F6dk090uAZGG5+tGERodw+zSQv9Rlivlpm8XWhRPfzo="
         }
       },
       "is_incremental": true,
@@ -84,7 +228,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+          "hash": "aVe9U1RxWP3P5E5X/x2rL8jCuFlqix3bHKxtkjZ3zxg="
         }
       },
       "is_incremental": false,
@@ -104,7 +248,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 4,
-          "skipped_file_count": 3
+          "skipped_file_count": 4
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 12,
+          "skipped_file_count": 12
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
