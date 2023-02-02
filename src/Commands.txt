@@ -1,0 +1,37 @@
+# Do this command if an error shown above is related to a missing Globalization value
+ needed for building the project successfully.
+apt-get update && \
+    apt-get install -y libicu-dev && \
+    docker-php-ext-install intl
+	
+	
+	
+	
+	
+services:
+  
+  rabbitmq3:
+        container_name: "rabbitmq"
+        image: rabbitmq:3.8-management-alpine
+        ports:
+            # AMQP protocol port
+            - '5672:5672'
+            # HTTP management UI
+            - '15672:15672'
+        volumes:
+           - ./data:/var/lib/rabbitmq:rw
+           - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
+           - ./rabbitmq/definitions.json:/opt/definitions.json:ro
+
+  jenkins:
+        image: jenkins/jenkins:lts
+        privileged: true
+        user: root
+        ports:
+          - 8080:8080
+          - 50000:50000
+        container_name: jenkins-lts
+        volumes:
+          - ~/jenkins_home:/var/jenkins_home
+          - /var/run/docker.sock:/var/run/docker.sock
+          - /usr/local/bin/docker:/usr/local/bin/docker

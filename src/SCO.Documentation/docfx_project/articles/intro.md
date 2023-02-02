@@ -1,0 +1,2 @@
+# Self checkout - Let your customers pay for their purchases faster
+### Leave your shop unattended and offer your customers an easy checkout: reduce your checkout time, eliminate queues and boost your customer's satisfaction
