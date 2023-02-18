@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SCO.PromotionService.Application.Common.Interfaces.Persistance;
-using SCO.PromotionService.Domain;
 using SCO.PromotionService.Domain.Entities;
+using SCO.PromotionService.Domain.ValueObjects;
 using SCO.PromotionService.EntityFramework.Persistence;
 
 namespace SCO.PromotionService.Infrastructure.Persitence;
 
-public class PromoBasketRepository : Repository<PromoBasket>, IPromoBasketRepository
+public class PromoBasketRepository : EFRepository<PromoBasket>, IPromoBasketRepository
 {
     public PromoBasketRepository(SCOPromotionServiceContext context,
         ILogger<PromoBasketRepository> logger) : base(context, logger)

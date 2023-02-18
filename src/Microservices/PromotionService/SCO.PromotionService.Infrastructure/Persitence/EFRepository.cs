@@ -6,14 +6,14 @@ using System.Linq.Expressions;
 
 namespace SCO.PromotionService.Infrastructure.Persitence
 {
-    public class Repository<T> : IRepository<T> where T : EntityBase<Guid>
+    public class EFRepository<T> : IRepository<T> where T : EntityBase<Guid>
     {
         protected readonly DbContext _context;
         internal DbSet<T> _dbSet;
-        public readonly ILogger<Repository<T>> _logger;
+        public readonly ILogger<EFRepository<T>> _logger;
 
         //Injecting the context object and logger instance to constructor
-        public Repository(DbContext context, ILogger<Repository<T>> logger)
+        public EFRepository(DbContext context, ILogger<EFRepository<T>> logger)
         {
             _context = context;
             _dbSet = context.Set<T>();

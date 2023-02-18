@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 using SCO.PromotionService.Application.Common.Interfaces.Persistance;
-using SCO.PromotionService.Domain;
 using SCO.PromotionService.Domain.Entities;
 using SCO.PromotionService.Domain.PromoEngine;
+using SCO.PromotionService.Domain.PromoHelper;
+using SCO.PromotionService.Domain.ValueObjects;
 using System.Linq.Expressions;
 
 namespace SCO.PromotionService.Application.StandartEngine;
@@ -11,11 +12,13 @@ public class StandartPromoEngine : IPromoEngine
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly Mapper _mapper;
+    private readonly IPromoCalculator _promoCalculator;
 
-    public StandartPromoEngine(IUnitOfWork unitOfWork, Mapper mapper)
+    public StandartPromoEngine(IUnitOfWork unitOfWork, Mapper mapper, IPromoCalculator promoCalculator)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _promoCalculator = promoCalculator;
     }
 
     public async Task<CalculatedBasket> CalculatePromotion(RawBasket rawBasket)
@@ -34,7 +37,7 @@ public class StandartPromoEngine : IPromoEngine
                     {
                         Id = rawItem.Id,
                         OldUnitPrice = rawItem.UnitPrice,
-                        UnitPrice = rawItem.UnitPrice / 100 * promoBasket.PromotionValue,
+                        UnitPrice = _promoCalculator.GetPromoValuePercent( rawItem.UnitPrice, promoBasket.PromotionValue),
                         Quantitity = rawItem.Quantitity,
                         Promoted = false
                     });
@@ -45,7 +48,7 @@ public class StandartPromoEngine : IPromoEngine
                     {
                         Id = rawItem.Id,
                         OldUnitPrice = rawItem.UnitPrice,
-                        UnitPrice = (rawItem.UnitPrice * (decimal)rawItem.Quantitity - promoBasket.PromotionValue) / (decimal)rawItem.Quantitity,
+                        UnitPrice = _promoCalculator.GetPromoValueAmount(rawItem.UnitPrice, (decimal)rawItem.Quantitity, promoBasket.PromotionValue),
                         Quantitity = rawItem.Quantitity,
                         Promoted = false
                     });
@@ -66,7 +69,5 @@ public class StandartPromoEngine : IPromoEngine
 
         return calculatedBasket;
     }
-
-
 
 }

@@ -1,4 +1,4 @@
-﻿namespace SCO.PromotionService.Domain;
+﻿namespace SCO.PromotionService.Domain.ValueObjects;
 
 public class RawItem
 {

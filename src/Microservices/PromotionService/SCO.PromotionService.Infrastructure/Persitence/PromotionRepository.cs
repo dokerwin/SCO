@@ -5,7 +5,7 @@ using SCO.PromotionService.EntityFramework.Persistence;
 
 namespace SCO.PromotionService.Infrastructure.Persitence;
 
-public class PromotionRepository : Repository<Promotion>, IPromotionRepository
+public class PromotionRepository : EFRepository<Promotion>, IPromotionRepository
 {
     public PromotionRepository(SCOPromotionServiceContext context, 
         ILogger<PromotionRepository> logger) : base(context, logger)

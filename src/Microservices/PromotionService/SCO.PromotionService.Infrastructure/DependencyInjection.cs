@@ -14,7 +14,7 @@ public static class DependencyInjection
 
     private static IServiceCollection AddRepositorises(this IServiceCollection services)
     {
-        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IPromotionRepository, PromotionRepository>();
         return services;

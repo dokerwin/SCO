@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\SCO.PromotionService.EntityFramework\SCO.PromotionService.EntityFramework.csproj" />
     <ProjectReference Include="..\..\BasketService\SCO.BasketService.Domain\SCO.BasketService.Domain.csproj" />
     <ProjectReference Include="..\SCO.PromotionService.Application\SCO.PromotionService.Application.csproj" />
     <ProjectReference Include="..\SCO.PromotionService.Domain\SCO.PromotionService.Domain.csproj" />
+    <ProjectReference Include="..\SCO.PromotionService.EntityFramework\SCO.PromotionService.EntityFramework.csproj" />
   </ItemGroup>
 
 </Project>
