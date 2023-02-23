@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SCO.PromotionService.Domain.Enums;
 
-namespace SCO.PromotionService.Domain.Entities
+namespace SCO.PromotionService.Domain.Entities;
+
+public class BasketInfo
 {
-    internal class BasketInfo
-    {
-    }
+    public PromotionType PromotionType { get; set; }
+    public decimal PromoValue { get; set; }
 }
