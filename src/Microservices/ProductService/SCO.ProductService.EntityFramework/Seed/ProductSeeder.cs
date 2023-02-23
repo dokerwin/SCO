@@ -10,6 +10,19 @@ public class ProductSeeder
         {
             new Product()
             {
+                Id = Guid.Parse("36dc193f-d101-43d5-8449-28c268a115e0"),
+                Barcode = "ABC-abc-1229",
+                Name = "Fanta without suggar",
+                ShortName = "Fanta Zero",
+                CategoryId = Guid.Parse("712228de-18de-4c4c-a2ea-7858b9fe8c2f"),
+                Price = 1.50,
+                VatId = Guid.Parse("59227363-61dc-43c1-bd3b-90309d2333a6"),
+                ProductTypeId =  Guid.Parse("36dc193f-d101-43d5-8449-28c268a115e4"),
+                ProductOwnerId = Guid.Parse("8b64dc6b-c521-4e0a-a578-daf410b0a123"),
+            },
+            new Product()
+            {
+                Id = Guid.Parse("36dc193f-d101-43d5-8449-28c268a115e1"),
                 Barcode = "ABC-abc-1230",
                 Name = "Coca-Cola without suggar",
                 ShortName = "Cola Zero",
@@ -21,6 +34,7 @@ public class ProductSeeder
             },
             new Product()
             {
+                Id = Guid.Parse("36dc193f-d101-43d5-8449-28c268a115e2"),
                 Barcode = "ABC-abc-1231",
                 Name = "Apples Ligol",
                 ShortName = "Ligol apple",
@@ -32,6 +46,7 @@ public class ProductSeeder
             },
             new Product()
             {
+                Id = Guid.Parse("36dc193f-d101-43d5-8449-28c268a115e3"),
                 Name = "Short cucumber",
                 ShortName = "Cucumber",
                 Barcode = "ABC-abc-1232",
